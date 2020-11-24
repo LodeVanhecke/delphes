@@ -34,9 +34,10 @@ branchGenJet = treeReader.UseBranch("GenJet")
 branchParticle  = treeReader.UseBranch("Particle")
 
 # Book histograms
-histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 600 )
-histParticlePT = ROOT.TH1F("HistparticleM", "P_{T} of all kaons", 100, 0, 400)
-histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",30 , 0,30 )
+histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 70)
+histParticlePT = ROOT.TH1F("HistparticlePT", "P_{T} of all kaons", 100, 0, 50)
+histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
+histAngle = ROOT.TH1F("histAngle", "Angle between Kaon and Jet",100 , 0, math.pi)
 
 # Loop over all events
 for entry in range(0, numberOfEntries):
@@ -53,8 +54,8 @@ for entry in range(0, numberOfEntries):
     for i in range(0,branchGenJet.GetEntries()):
      jet = branchGenJet.At(i)
      lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
-     print(lvofjet.Px())
-    # Plot jet transverse momentum
+
+ # Plot jet transverse momentum
      histGenJetPT.Fill(jet.PT)
 
     # Print jet transverse momentum
@@ -70,6 +71,7 @@ for entry in range(0, numberOfEntries):
        if abs(particle.PID)==321 or abs(particle.PID)==311:
         #print(particle.PID)
        # Plot mass
+        histAngle.Fill(p1.DeltaR(lvofjet))
         histParticlePT.Fill(particle.PT)
         #print(particle.PT)
 # Show resulting histogram
@@ -80,6 +82,8 @@ c2=ROOT.TCanvas('c2','Histogram P_{T} kaons')
 histParticlePT.Draw()
 c3=ROOT.TCanvas('c3','Number of jets in a event')
 histNJet.Draw()
+c4=ROOT.TCanvas('c4','Angle between Kaon and Jet')
+histAngle.Draw()
 
 input("Press Enter to continue...")
 

@@ -33,9 +33,9 @@ branchGenJet = treeReader.UseBranch("GenJet")
 branchParticle  = treeReader.UseBranch("Particle")
 
 # Book histograms
-histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 600 )
-histParticlePT = ROOT.TH1F("HistparticlePT", "P_{T} of all kaons", 100, 0, 400)
-histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",30 , 0,30 )
+histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 70)
+histParticlePT = ROOT.TH1F("HistparticlePT", "P_{T} of all kaons", 100, 0, 50)
+histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
 # Loop over all events
 for entry in range(0, numberOfEntries):
   # Load selected branches with data from specified event
