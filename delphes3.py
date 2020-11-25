@@ -37,7 +37,8 @@ branchParticle  = treeReader.UseBranch("Particle")
 histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 70)
 histParticlePT = ROOT.TH1F("HistparticlePT", "P_{T} of all kaons", 100, 0, 50)
 histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
-histAngle = ROOT.TH1F("histAngle", "Angle between Kaon and Jet",100 , 0, math.pi)
+histAngle = ROOT.TH1F("histAngle", "Angle between Kaon and Jet",100 , 0, 2*math.pi)
+histM = ROOT.TH1F("histM", "Invariant mass of jet and kaon",100 , 0, 100)
 
 # Loop over all events
 for entry in range(0, numberOfEntries):
@@ -47,7 +48,9 @@ for entry in range(0, numberOfEntries):
   histNJet.Fill(branchGenJet.GetEntries())
 
   p1=ROOT.TLorentzVector()
+  p2=ROOT.TLorentzVector()
   lvofjet=ROOT.TLorentzVector()
+  
   # If event contains at least 1 jet
   if branchGenJet.GetEntries() > 0:
     # Take all jets in event
@@ -66,13 +69,18 @@ for entry in range(0, numberOfEntries):
       # Take first particle
       for i in range(0,branchParticle.GetEntries()):
        particle = branchParticle.At(i)
-       p1.SetPxPyPzE(particle.Px,particle.Py,particle.Pz,particle.E)
-       # filter Kaon(K0,K+,K-) using PDG ID
-       if abs(particle.PID)==321 or abs(particle.PID)==311:
+       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+       # filter Kaon(K+,K-) using PDG ID
+       if abs(particle.PID)==321:
         #print(particle.PID)
        # Plot mass
-        histAngle.Fill(p1.DeltaR(lvofjet))
+        histAngle.Fill(p1.DeltaPhi(lvofjet))
         histParticlePT.Fill(particle.PT)
+        for i in range(0,branchParticle.GetEntries()):
+         particle2 = branchParticle.At(i)
+         p2.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
+         if abs(particle.PID)==321:
+          histM.Fill((p1+p2).M())
         #print(particle.PT)
 # Show resulting histogram
 
@@ -84,6 +92,8 @@ c3=ROOT.TCanvas('c3','Number of jets in a event')
 histNJet.Draw()
 c4=ROOT.TCanvas('c4','Angle between Kaon and Jet')
 histAngle.Draw()
+c5=ROOT.TCanvas('c5','Invariant mass of two kaons')
+histM.Draw()
 
 input("Press Enter to continue...")
 
