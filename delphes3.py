@@ -11,15 +11,15 @@ if len(sys.argv) < 2:
   print(" Usage: Example1.py input_file")
   sys.exit(1)
 
-ROOT.gSystem.Load("/home/lodev/delphes/libDelphes")
+ROOT.gSystem.Load("/user/lvanhecke/delphes/libDelphes")
 
 try:
-  ROOT.gInterpreter.Declare('#include "/home/lodev/delphes/classes/DelphesClasses.h"')
-  ROOT.gInterpreter.Declare('#include "/home/lodev/delphes/external/ExRootAnalysis/ExRootTreeReader.h"')
+  ROOT.gInterpreter.Declare('#include "/user/lvanhecke/delphes/classes/DelphesClasses.h"')
+  ROOT.gInterpreter.Declare('#include "/user/lvanhecke/delphes/external/ExRootAnalysis/ExRootTreeReader.h"')
 except:
   pass
 
-inputFile = sys.argv[1]
+inputFile = "../data/"+sys.argv[1]
 
 # Create chain of root trees
 chain = ROOT.TChain("Delphes")
@@ -62,30 +62,33 @@ for entry in range(0, numberOfEntries):
     # Take all jets in event
     for i in range(0,branchGenJet.GetEntries()):
      jet = branchGenJet.At(i)
-     # Plot jet transverse momentum
-     histGenJetPT.Fill(jet.PT)
-     # Set Lv of jet
-     lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
-     # Total Lv of all jets in event
-     jets=jets+lvofjet
-     # Loop over all jets in event
-     for j in range(0+i,branchGenJet.GetEntries()):
-      # Filter same jets
-      if j==i:
-       pass
-      if j!=i:
-       jet2 = branchGenJet.At(j)
-       lvofjet2.SetPtEtaPhiM(jet2.PT,jet2.Eta,jet2.Phi,jet2.Mass)
-       # Invariant mass of two jets
-       jetsM=jetsM+[(lvofjet+lvofjet2).M()]
-    # Plotting the angle between kaons and jet
-    if branchParticle.GetEntries() > 0:
-     for l in range(0,branchParticle.GetEntries()):
-      particle = branchParticle.At(l)
-      # filter Kaon(K+,K-) using PDG ID
-      if abs(particle.PID)==321:
-       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-       histAngle.Fill(p1.Vect().Angle(lvofjet.Vect()))
+     if jet.PT>10:
+      # Plot jet transverse momentum
+      histGenJetPT.Fill(jet.PT)
+      # Set Lv of jet
+      lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
+      # Total Lv of all jets in event
+      jets=jets+lvofjet
+      # Loop over all jets in event
+      for j in range(0+i,branchGenJet.GetEntries()):
+       # Filter same jets
+       if j==i:
+        pass
+       if j!=i:
+        jet2 = branchGenJet.At(j)
+        lvofjet2.SetPtEtaPhiM(jet2.PT,jet2.Eta,jet2.Phi,jet2.Mass)
+        # Invariant mass of two jets
+        jetsM=jetsM+[(lvofjet+lvofjet2).M()]
+      # Plotting the angle between kaons and jet
+      if branchParticle.GetEntries() > 0:
+       for l in range(0,branchParticle.GetEntries()):
+        particle = branchParticle.At(l)
+        # filter Kaon(K+,K-) using PDG ID
+        if abs(particle.PID)==321:
+         p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+         histAngle.Fill(p1.Vect().Angle(lvofjet.Vect()))
+     else:
+      break
 
   # Fill histogram with PT of all kaons
   if branchParticle.GetEntries() > 0:
