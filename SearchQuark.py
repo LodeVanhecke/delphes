@@ -36,29 +36,28 @@ branchGenParticle = treeReader.UseBranch("GenParticle")
 
 # Book histograms
 histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 70)
-histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
+histNZ = ROOT.TH1F("histNZ", "Number of Z bosons in a event",18 , 0, 18)
 
 # Loop over all events
 for entry in range(0, numberOfEntries):
   # Load selected branches with data from specified event
   treeReader.ReadEntry(entry)
   
-  histNJet.Fill(branchGenJet.GetEntries())
+  NZ=0
   
   for m in range(0,branchGenParticle.GetEntries()):
     particle = branchGenParticle.At(m)
-    if particle.PID
-    particle.D1
-    particle.D2
-   # If event contains at least 1 jet
-   if branchGenJet.GetEntries() > 0:
-     # Take all jets in event
-     for i in range(0,branchGenJet.GetEntries()):
-      jet = branchGenJet.At(i)
-      if jet.PT>10:
-         
-      else:
-       break
-
+    if particle.PID==23:
+     print(particle.D1.PID)
+     print(particle.D2.PID)
+     NZ=NZ+1
+    else:
+      break
+  
+  histNZ.Fill(NZ)
+ 
+c1=ROOT.TCanvas('c3','Number of Z bosons in a event')
+histNZ.Draw()
+c1.SaveAs("histNZ.pdf")
 
 input("Press Enter to continue...")
