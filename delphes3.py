@@ -65,30 +65,37 @@ for entry in range(0, numberOfEntries):
      if jet.PT>10:
       # Plot jet transverse momentum
       histGenJetPT.Fill(jet.PT)
-      # Set Lv of jet
-      lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
-      # Total Lv of all jets in event
-      jets=jets+lvofjet
+     else:
+      pass
+     # Set Lv of jet
+     lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
+     # Total lv of all jets in event
+     jets=jets+lvofjet
+     if lvofjet.M()>10:
       # Loop over all jets in event
-      for j in range(0+i,branchGenJet.GetEntries()):
-       # Filter same jets
+      for j in range(i,branchGenJet.GetEntries()):
+       # Filter same jets 
        if j==i:
         pass
        if j!=i:
         jet2 = branchGenJet.At(j)
         lvofjet2.SetPtEtaPhiM(jet2.PT,jet2.Eta,jet2.Phi,jet2.Mass)
-        # Invariant mass of two jets
-        jetsM=jetsM+[(lvofjet+lvofjet2).M()]
+        if lvofjet2.M()>10:
+         # Invariant mass of two jets
+         jetsM=jetsM+[(lvofjet+lvofjet2).M()]
+        else:
+         pass
       # Plotting the angle between kaons and jet
       if branchParticle.GetEntries() > 0:
        for l in range(0,branchParticle.GetEntries()):
         particle = branchParticle.At(l)
         # filter Kaon(K+,K-) using PDG ID
-        if abs(particle.PID)==321:
-         p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-         histAngle.Fill(p1.Vect().Angle(lvofjet.Vect()))
+       if abs(particle.PID)==321:
+        p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+        histAngle.Fill(p1.Vect().Angle(lvofjet.Vect()))
      else:
-      break
+      pass
+
 
   # Fill histogram with PT of all kaons
   if branchParticle.GetEntries() > 0:
@@ -118,6 +125,7 @@ for entry in range(0, numberOfEntries):
    pass
   # Plot total invariant mass of jets in event
   histMJ.Fill(jets.M())
+
 # Show resulting histogram
 c1=ROOT.TCanvas('c1','P_{T} of all GenJets')
 histGenJetPT.Draw()
