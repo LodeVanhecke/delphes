@@ -23,3 +23,4 @@ root2pileup
 stdhep2pileup
 tmp
 *.root
+*.pdf

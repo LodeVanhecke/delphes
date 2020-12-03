@@ -90,9 +90,9 @@ for entry in range(0, numberOfEntries):
        for l in range(0,branchParticle.GetEntries()):
         particle = branchParticle.At(l)
         # filter Kaon(K+,K-) using PDG ID
-       if abs(particle.PID)==321:
-        p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-        histAngle.Fill(p1.Vect().Angle(lvofjet.Vect()))
+        if abs(particle.PID)==321:
+         p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+         histAngle.Fill(p1.Vect().Angle(lvofjet.Vect()))
      else:
       pass
 
