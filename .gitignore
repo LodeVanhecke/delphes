@@ -24,3 +24,6 @@ stdhep2pileup
 tmp
 *.root
 *.pdf
+*.JPG
+*.PNG
+*.png
