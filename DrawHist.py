@@ -3,7 +3,7 @@ import sys
 import ROOT
 
 def Cosmetic(hist,xtitle,ytitle,norm,logx,logy,filename):
-  c=ROOT.TCanvas()
+  c = ROOT.TCanvas()
   ROOT.gStyle.SetOptStat(0)
   hist[0].GetXaxis().SetTitle(xtitle)
   hist[0].GetYaxis().SetTitle(ytitle)
@@ -11,7 +11,7 @@ def Cosmetic(hist,xtitle,ytitle,norm,logx,logy,filename):
     hist[i].SetLineColor(i+1)
     hist[i].SetLineWidth(3)
     hist[i].SetTitle("")
-    if norm==True:
+    if norm == True:
      hist[i].DrawNormalized('same')
     else:
      hist[i].Draw('same')
