@@ -34,7 +34,7 @@ branchGenJet = treeReader.UseBranch("GenJet")
 branchParticle  = treeReader.UseBranch("Particle")
 
 # Book histograms
-file=ROOT.TFile('out.root','RECREATE')
+file=ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
 histNZ = ROOT.TH1F("histNZ", "Number of Z bosons in a event",18 , 0, 18)
 histNQ = ROOT.TH1F("histNQ", "Number of events with quark PDG ID",12, -6, 6)
 histJetD = ROOT.TH1F("histGenJetD", "P_{T} of all GenJets from D", 100, 0, 50)
@@ -43,12 +43,21 @@ histJetS = ROOT.TH1F("histGenJetS", "P_{T} of all GenJets from S", 100, 0, 50)
 histJetC = ROOT.TH1F("histGenJetC", "P_{T} of all GenJets from C", 100, 0, 50)
 histJetB = ROOT.TH1F("histGenJetB", "P_{T} of all GenJets from B", 100, 0, 50)
 hist=[histJetD,histJetU,histJetS,histJetC,histJetB]
+histParticleD = ROOT.TH1F("histParticleD", "P_{T} of all kaons from D", 10, 0, 10)
+histParticleU = ROOT.TH1F("histParticleU", "P_{T} of all kaons from U", 10, 0, 10)
+histParticleS = ROOT.TH1F("histParticleS", "P_{T} of all kaons from S", 10, 0, 10)
+histParticleC = ROOT.TH1F("histParticleC", "P_{T} of all kaons from C", 10, 0, 10)
+histParticleB = ROOT.TH1F("histParticleB", "P_{T} of all kaons from B", 10, 0, 10)
 
 jetD = []
 jetU = []
 jetS = []
 jetC = []
 jetB = []
+
+p1 = ROOT.TLorentzVector()
+lvofjet = ROOT.TLorentzVector()
+
 
 # Loop over all events
 for entry in range(0, numberOfEntries):
@@ -90,6 +99,7 @@ for entry in range(0, numberOfEntries):
    # Take all jets in event
    for l in range(0,branchGenJet.GetEntries()):
     jet = branchGenJet.At(l)
+    lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
     if jet.PT>10:
      # Plot jet transverse momentum
      if entry in jetD:
@@ -108,6 +118,42 @@ for entry in range(0, numberOfEntries):
      pass
 
 
+   # Fill histogram with number of kaons
+   if branchParticle.GetEntries() > 0:
+     # Take all particles
+     Kaon=0
+     for l in range(0,branchParticle.GetEntries()):
+      particle = branchParticle.At(l)
+      # filter Kaon(K+,K-) using PDG ID
+      if abs(particle.PID)==321:
+       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+       if p1.DeltaR(lvofjet)<=0.4:
+        if entry in jetD:
+         Kaon=Kaon+1
+        if entry in jetU:
+         Kaon=Kaon+1
+        if entry in jetS:
+         Kaon=Kaon+1
+        if entry in jetC:
+         Kaon=Kaon+1
+        if entry in jetB:
+         Kaon=Kaon+1
+        else:
+         pass
+        if entry in jetD:
+         histParticleD.Fill(Kaon)
+        if entry in jetU:
+         histParticleU.Fill(Kaon)
+        if entry in jetS:
+         histParticleS.Fill(Kaon)
+        if entry in jetC:
+         histParticleC.Fill(Kaon)
+        if entry in jetB:
+         histParticleB.Fill(Kaon)
+       else:
+        pass
+     else:
+      pass
 
 # Branching ratios
 
@@ -145,14 +191,14 @@ print('DSB=',round(BR2*100/((BR_U+BR_C)/2+(BR_D+BR_S+BR_B)/3+BR_C+BR_B),1),round
 file.Write()
 
 
-c1=ROOT.TCanvas('c1','Number of Z bosons in a event')
+#c1=ROOT.TCanvas('c1','Number of Z bosons in a event')
 #ROOT.gStyle.SetOptStat(0)
-histNZ.Draw()
-c1.SaveAs("histNZ.png")
-c2=ROOT.TCanvas('c2','Number of events with quark PDG ID')
+#histNZ.Draw()
+#c1.SaveAs("histNZ.png")
+#c2=ROOT.TCanvas('c2','Number of events with quark PDG ID')
 #ROOT.gStyle.SetOptStat(0)
-histNQ.Draw()
-c2.SaveAs("histNQ.png")
+#histNQ.Draw()
+#c2.SaveAs("histNQ.png")
 #c3=ROOT.TCanvas('c3','PT of jets from quarks')
 #ROOT.gStyle.SetOptStat(0)
 #histJetD.SetLineColor(1)
