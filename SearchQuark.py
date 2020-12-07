@@ -185,10 +185,7 @@ BR20 = 15.6
 sigma_BR20 = 0.4
 print('DSB=',round(BR2*100/((BR_U+BR_C)/2+(BR_D+BR_S+BR_B)/3+BR_C+BR_B),1),round(BR20*100/54.35,1))
 
- 
-
 file.Write()
-
 
 #c1 = ROOT.TCanvas('c1','Number of Z bosons in a event')
 #ROOT.gStyle.SetOptStat(0)
