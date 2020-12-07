@@ -37,12 +37,12 @@ branchParticle  = treeReader.UseBranch("Particle")
 file = ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
 histNZ = ROOT.TH1F("histNZ", "Number of Z bosons in a event",18 , 0, 18)
 histNQ = ROOT.TH1F("histNQ", "Number of events with quark PDG ID",12, -6, 6)
-histJetD = ROOT.TH1F("histGenJetD", "P_{T} of all GenJets from D", 100, 0, 50)
-histJetU = ROOT.TH1F("histGenJetU", "P_{T} of all GenJets from U", 100, 0, 50)
-histJetS = ROOT.TH1F("histGenJetS", "P_{T} of all GenJets from S", 100, 0, 50)
-histJetC = ROOT.TH1F("histGenJetC", "P_{T} of all GenJets from C", 100, 0, 50)
-histJetB = ROOT.TH1F("histGenJetB", "P_{T} of all GenJets from B", 100, 0, 50)
-hist=[histJetD,histJetU,histJetS,histJetC,histJetB]
+histJetPTD = ROOT.TH1F("histGenJetPTD", "P_{T} of all GenJets from D", 100, 0, 50)
+histJetPTU = ROOT.TH1F("histGenJetPTU", "P_{T} of all GenJets from U", 100, 0, 50)
+histJetPTS = ROOT.TH1F("histGenJetPTS", "P_{T} of all GenJets from S", 100, 0, 50)
+histJetPTC = ROOT.TH1F("histGenJetPTC", "P_{T} of all GenJets from C", 100, 0, 50)
+histJetPTB = ROOT.TH1F("histGenJetPTB", "P_{T} of all GenJets from B", 100, 0, 50)
+hist=[histJetPTD,histJetPTU,histJetPTS,histJetPTC,histJetPTB]
 histNCKaonD = ROOT.TH1F("histNCKaonD", "Number of charged kaons in D jet", 10, 0, 10)
 histNCKaonU = ROOT.TH1F("histNCKaonU", "Number of charged kaons in U jet", 10, 0, 10)
 histNCKaonS = ROOT.TH1F("histNCKaonS", "Number of charged kaons in S jet", 10, 0, 10)
@@ -102,15 +102,15 @@ for entry in range(0, numberOfEntries):
     if jet.PT > 10:
      # Plot jet transverse momentum
      if entry in jetD:
-      histJetD.Fill(jet.PT)
+      histJetPTD.Fill(jet.PT)
      if entry in jetU:
-      histJetU.Fill(jet.PT)
+      histJetPTU.Fill(jet.PT)
      if entry in jetS:
-      histJetS.Fill(jet.PT)
+      histJetPTS.Fill(jet.PT)
      if entry in jetC:
-      histJetC.Fill(jet.PT)
+      histJetPTC.Fill(jet.PT)
      if entry in jetB:
-      histJetB.Fill(jet.PT)
+      histJetPTB.Fill(jet.PT)
      else:
       pass
     else:
@@ -197,19 +197,16 @@ file.Write()
 #c2.SaveAs("histNQ.png")
 #c3 = ROOT.TCanvas('c3','PT of jets from quarks')
 #ROOT.gStyle.SetOptStat(0)
-#histJetD.SetLineColor(1)
-#histJetD.DrawNormalized('same')
-#histJetU.SetLineColor(2)
-#histJetU.DrawNormalized('same')
-#histJetS.SetLineColor(3)
-#histJetS.DrawNormalized('same')
-#histJetC.SetLineColor(4)
-#histJetC.DrawNormalized('same')
-#histJetB.SetLineColor(5)
-#histJetB.DrawNormalized('same')
+#histJetPTD.SetLineColor(1)
+#histJetPTD.DrawNormalized('same')
+#histJetPTU.SetLineColor(2)
+#histJetPTU.DrawNormalized('same')
+#histJetPTS.SetLineColor(3)
+#histJetPTS.DrawNormalized('same')
+#histJetPTC.SetLineColor(4)
+#histJetPTC.DrawNormalized('same')
+#histJetPTB.SetLineColor(5)
+#histJetPTB.DrawNormalized('same')
 #c3.BuildLegend()
-#histJetD.SetTitle('PT of jets from quarks')
+#histJetPTD.SetTitle('PT of jets from quarks')
 #c3.SaveAs("histJet.pdf")
-
-
-input("Press Enter to continue...")
