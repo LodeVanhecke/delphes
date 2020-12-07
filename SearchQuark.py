@@ -43,11 +43,11 @@ histJetS = ROOT.TH1F("histGenJetS", "P_{T} of all GenJets from S", 100, 0, 50)
 histJetC = ROOT.TH1F("histGenJetC", "P_{T} of all GenJets from C", 100, 0, 50)
 histJetB = ROOT.TH1F("histGenJetB", "P_{T} of all GenJets from B", 100, 0, 50)
 hist=[histJetD,histJetU,histJetS,histJetC,histJetB]
-histParticleD = ROOT.TH1F("histParticleD", "Number of charged kaons from D", 10, 0, 10)
-histParticleU = ROOT.TH1F("histParticleU", "Number of charged kaons from U", 10, 0, 10)
-histParticleS = ROOT.TH1F("histParticleS", "Number of charged kaons from S", 10, 0, 10)
-histParticleC = ROOT.TH1F("histParticleC", "Number of charged kaons from C", 10, 0, 10)
-histParticleB = ROOT.TH1F("histParticleB", "Number of charged kaons from B", 10, 0, 10)
+histNCKaonD = ROOT.TH1F("histNCKaonD", "Number of charged kaons in D jet", 10, 0, 10)
+histNCKaonU = ROOT.TH1F("histNCKaonU", "Number of charged kaons in U jet", 10, 0, 10)
+histNCKaonS = ROOT.TH1F("histNCKaonS", "Number of charged kaons in S jet", 10, 0, 10)
+histNCKaonC = ROOT.TH1F("histNCKaonC", "Number of charged kaons in C jet", 10, 0, 10)
+histNCKaonB = ROOT.TH1F("histNCKaonB", "Number of charged kaons in B jet", 10, 0, 10)
 
 jetD = []
 jetU = []
@@ -140,15 +140,15 @@ for entry in range(0, numberOfEntries):
         else:
          pass
         if entry in jetD:
-         histParticleD.Fill(Kaon)
+         histNCKaonD.Fill(Kaon)
         if entry in jetU:
-         histParticleU.Fill(Kaon)
+         histNCKaonU.Fill(Kaon)
         if entry in jetS:
-         histParticleS.Fill(Kaon)
+         histNCKaonS.Fill(Kaon)
         if entry in jetC:
-         histParticleC.Fill(Kaon)
+         histNCKaonC.Fill(Kaon)
         if entry in jetB:
-         histParticleB.Fill(Kaon)
+         histNCKaonB.Fill(Kaon)
        else:
         pass
      else:

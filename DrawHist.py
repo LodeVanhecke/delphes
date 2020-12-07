@@ -19,7 +19,7 @@ def Cosmetic(hist,xtitle,ytitle,norm,logx,logy,filename):
 
 file = ROOT.TFile(sys.argv[1],"READ")
 histJet = [file.Get('histGenJetD')]+[file.Get('histGenJetU')]+[file.Get('histGenJetS')]+[file.Get('histGenJetC')]+[file.Get('histGenJetB')]
-Cosmetic(histJet,'PT','number of jets',True,False,False,'histJet.png') 
+Cosmetic(histJet,'Transverse momentum','',True,False,False,'histJet_'+sys.argv[1][:-5]+'.png')
 
-histParticle = [file.Get('histParticleD')]+[file.Get('histParticleU')]+[file.Get('histParticleS')]+[file.Get('histParticleC')]+[file.Get('histParticleB')]
-Cosmetic(histParticle,'Number of kaons per event','',True,False,False,'histParticle.png')
+histNCKaon = [file.Get('histNCKaonD')]+[file.Get('histNCKaonU')]+[file.Get('histNCKaonS')]+[file.Get('histNCKaonC')]+[file.Get('histNCKaonB')]
+Cosmetic(histNCKaon,'Number charged kaons in jet','',True,False,False,'histNCKaon_'+sys.argv[1][:-5]+'.png')
