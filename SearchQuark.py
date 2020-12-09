@@ -123,82 +123,60 @@ for entry in range(0, numberOfEntries):
 
 
    # Fill histogram with number of kaons
-   if branchParticle.GetEntries() > 0:
-     # Take all particles
-     Kaon=0
-     for l in range(0,branchParticle.GetEntries()):
-      particle = branchParticle.At(l)
-      # filter Kaon(K+,K-) using PDG ID
-      if abs(particle.PID) == 321:
-       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-       if p1.DeltaR(lvofjet) <= 0.4:
-        if entry in jetD:
-         Kaon = Kaon+1
-        if entry in jetU:
-         Kaon = Kaon+1
-        if entry in jetS:
-         Kaon = Kaon+1
-        if entry in jetC:
-         Kaon = Kaon+1
-        if entry in jetB:
-         Kaon = Kaon+1
-        else:
-         pass
-        if entry in jetD:
-         histNCKaonD.Fill(Kaon)
-        if entry in jetU:
-         histNCKaonU.Fill(Kaon)
-        if entry in jetS:
-         histNCKaonS.Fill(Kaon)
-        if entry in jetC:
-         histNCKaonC.Fill(Kaon)
-        if entry in jetB:
-         histNCKaonB.Fill(Kaon)
+    if branchParticle.GetEntries() > 0:
+      # Take all particles
+      Kaon=0
+      for l in range(0,branchParticle.GetEntries()):
+       particle = branchParticle.At(l)
+       # filter Kaon(K+,K-) using PDG ID
+       if abs(particle.PID) == 321:
+        p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+        if p1.DeltaR(lvofjet) <= 0.4:
+         Kaon = Kaon + 1
         else:
          pass
        else:
         pass
-     else:
-      pass
+      if entry in jetD:
+       histNCKaonD.Fill(Kaon)
+      if entry in jetU:
+       histNCKaonU.Fill(Kaon)
+      if entry in jetS:
+       histNCKaonS.Fill(Kaon)
+      if entry in jetC:
+       histNCKaonC.Fill(Kaon)
+      if entry in jetB:
+       histNCKaonB.Fill(Kaon)
+      else:
+       pass
 
-   # Fill histogram with number of pions
-   if branchParticle.GetEntries() > 0:
-     # Take all particles
-     Pion=0
-     for l in range(0,branchParticle.GetEntries()):
-      particle = branchParticle.At(l)
-      # filter Pion(pi+,pi-) using PDG ID
-      if abs(particle.PID) == 211:
-       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-       if p1.DeltaR(lvofjet) <= 0.4:
-        if entry in jetD:
+    # Fill histogram with number of pions
+    if branchParticle.GetEntries() > 0:
+      # Take all particles
+      Pion=0
+      for l in range(0,branchParticle.GetEntries()):
+       particle = branchParticle.At(l)
+       # filter Pion(pi+,pi-) using PDG ID
+       if abs(particle.PID) == 211:
+        p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+        if p1.DeltaR(lvofjet) <= 0.4:
          Pion = Pion+1
-        if entry in jetU:
-         Pion = Pion+1
-        if entry in jetS:
-         Pion = Pion+1
-        if entry in jetC:
-         Pion = Pion+1
-        if entry in jetB:
-         Pion = Pion+1
-        else:
-         pass
-        if entry in jetD:
-         histNCPionD.Fill(Pion)
-        if entry in jetU:
-         histNCPionU.Fill(Pion)
-        if entry in jetS:
-         histNCPionS.Fill(Pion)
-        if entry in jetC:
-         histNCPionC.Fill(Pion)
-        if entry in jetB:
-         histNCPionB.Fill(Pion)
         else:
          pass
        else:
         pass
-     else:
-      pass
+      if entry in jetD:
+       histNCPionD.Fill(Pion)
+      if entry in jetU:
+       histNCPionU.Fill(Pion)
+      if entry in jetS:
+       histNCPionS.Fill(Pion)
+      if entry in jetC:
+       histNCPionC.Fill(Pion)
+      if entry in jetB:
+       histNCPionB.Fill(Pion)
+      else:
+       pass
 
 
 # Branching ratios

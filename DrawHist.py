@@ -26,7 +26,7 @@ histJetPT = [file.Get('histGenJetPTD')]+[file.Get('histGenJetPTU')]+[file.Get('h
 Cosmetic(histJetPT,'Transverse momentum','',True,False,False,'histJetPT_'+sys.argv[1][:-5]+'.png')
 
 histNCKaon = [file.Get('histNCKaonD')]+[file.Get('histNCKaonU')]+[file.Get('histNCKaonS')]+[file.Get('histNCKaonC')]+[file.Get('histNCKaonB')]
-Cosmetic(histNCKaon,'Number charged kaons in jet','',False,True,False,'histNCKaon_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histNCKaon,'Number charged kaons in jet','',False,False,True,'histNCKaon_'+sys.argv[1][:-5]+'.png')
 
 histNCPion = [file.Get('histNCPionD')]+[file.Get('histNCPionU')]+[file.Get('histNCPionS')]+[file.Get('histNCPionC')]+[file.Get('histNCPionB')]
-Cosmetic(histNCPion,'Number charged pions in jet','',False,True,False,'histNCPion_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histNCPion,'Number charged pions in jet','',False,False,True,'histNCPion_'+sys.argv[1][:-5]+'.png')
