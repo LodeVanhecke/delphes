@@ -48,6 +48,11 @@ histNCKaonU = ROOT.TH1F("histNCKaonU", "Number of charged kaons in U jet", 10, 0
 histNCKaonS = ROOT.TH1F("histNCKaonS", "Number of charged kaons in S jet", 10, 0, 10)
 histNCKaonC = ROOT.TH1F("histNCKaonC", "Number of charged kaons in C jet", 10, 0, 10)
 histNCKaonB = ROOT.TH1F("histNCKaonB", "Number of charged kaons in B jet", 10, 0, 10)
+histNCPionD = ROOT.TH1F("histNCPionD", "Number of charged pions in D jet", 10, 0, 10)
+histNCPionU = ROOT.TH1F("histNCPionU", "Number of charged pions in U jet", 10, 0, 10)
+histNCPionS = ROOT.TH1F("histNCPionS", "Number of charged pions in S jet", 10, 0, 10)
+histNCPionC = ROOT.TH1F("histNCPionC", "Number of charged pions in C jet", 10, 0, 10)
+histNCPionB = ROOT.TH1F("histNCPionB", "Number of charged pions in B jet", 10, 0, 10)
 
 jetD = []
 jetU = []
@@ -149,10 +154,52 @@ for entry in range(0, numberOfEntries):
          histNCKaonC.Fill(Kaon)
         if entry in jetB:
          histNCKaonB.Fill(Kaon)
+        else:
+         pass
        else:
         pass
      else:
       pass
+
+   # Fill histogram with number of pions
+   if branchParticle.GetEntries() > 0:
+     # Take all particles
+     Pion=0
+     for l in range(0,branchParticle.GetEntries()):
+      particle = branchParticle.At(l)
+      # filter Pion(pi+,pi-) using PDG ID
+      if abs(particle.PID) == 211:
+       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+       if p1.DeltaR(lvofjet) <= 0.4:
+        if entry in jetD:
+         Pion = Pion+1
+        if entry in jetU:
+         Pion = Pion+1
+        if entry in jetS:
+         Pion = Pion+1
+        if entry in jetC:
+         Pion = Pion+1
+        if entry in jetB:
+         Pion = Pion+1
+        else:
+         pass
+        if entry in jetD:
+         histNCPionD.Fill(Pion)
+        if entry in jetU:
+         histNCPionU.Fill(Pion)
+        if entry in jetS:
+         histNCPionS.Fill(Pion)
+        if entry in jetC:
+         histNCPionC.Fill(Pion)
+        if entry in jetB:
+         histNCPionB.Fill(Pion)
+        else:
+         pass
+       else:
+        pass
+     else:
+      pass
+
 
 # Branching ratios
 
