@@ -32,22 +32,32 @@ numberOfEntries = treeReader.GetEntries()
 # Get pointers to branches used in this analysis
 branchGenJet = treeReader.UseBranch("GenJet")
 branchParticle  = treeReader.UseBranch("Particle")
+branchTrack = treeReader.UseBranch("Track")
 
 # Book histograms
 file = ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
 histNZ = ROOT.TH1F("histNZ", "Number of Z bosons in a event",18 , 0, 18)
 histNQ = ROOT.TH1F("histNQ", "Number of events with quark PDG ID",12, -6, 6)
+
 histJetPTD = ROOT.TH1F("histGenJetPTD", "P_{T} of all GenJets from D", 100, 0, 50)
 histJetPTU = ROOT.TH1F("histGenJetPTU", "P_{T} of all GenJets from U", 100, 0, 50)
 histJetPTS = ROOT.TH1F("histGenJetPTS", "P_{T} of all GenJets from S", 100, 0, 50)
 histJetPTC = ROOT.TH1F("histGenJetPTC", "P_{T} of all GenJets from C", 100, 0, 50)
 histJetPTB = ROOT.TH1F("histGenJetPTB", "P_{T} of all GenJets from B", 100, 0, 50)
 hist=[histJetPTD,histJetPTU,histJetPTS,histJetPTC,histJetPTB]
+
+histJetCD = ROOT.TH1F("histJetCD", "Total charge of D jet", 200, -10, 10)
+histJetCU = ROOT.TH1F("histJetCU", "Total charge of U jet", 200, -10, 10)
+histJetCS = ROOT.TH1F("histJetCS", "Total charge of S jet", 200, -10, 10)
+histJetCC = ROOT.TH1F("histJetCC", "Total charge of C jet", 200, -10, 10)
+histJetCB = ROOT.TH1F("histJetCB", "Total charge of B jet", 200, -10, 10)
+
 histNCKaonD = ROOT.TH1F("histNCKaonD", "Number of charged kaons in D jet", 10, 0, 10)
 histNCKaonU = ROOT.TH1F("histNCKaonU", "Number of charged kaons in U jet", 10, 0, 10)
 histNCKaonS = ROOT.TH1F("histNCKaonS", "Number of charged kaons in S jet", 10, 0, 10)
 histNCKaonC = ROOT.TH1F("histNCKaonC", "Number of charged kaons in C jet", 10, 0, 10)
 histNCKaonB = ROOT.TH1F("histNCKaonB", "Number of charged kaons in B jet", 10, 0, 10)
+
 histNCPionD = ROOT.TH1F("histNCPionD", "Number of charged pions in D jet", 10, 0, 10)
 histNCPionU = ROOT.TH1F("histNCPionU", "Number of charged pions in U jet", 10, 0, 10)
 histNCPionS = ROOT.TH1F("histNCPionS", "Number of charged pions in S jet", 10, 0, 10)
@@ -62,12 +72,12 @@ jetB = []
 
 p1 = ROOT.TLorentzVector()
 lvofjet = ROOT.TLorentzVector()
+t1 = ROOT.TVector3()
 
 # Loop over all events
 for entry in range(0, numberOfEntries):
   # Load selected branches with data from specified event
   treeReader.ReadEntry(entry)
-  
   NZ = 0
   
   for m in range(0,branchParticle.GetEntries()):
@@ -101,8 +111,8 @@ for entry in range(0, numberOfEntries):
   # If event contains at least 1 jet
   if branchGenJet.GetEntries() > 0:
    # Take all jets in event
-   for l in range(0,branchGenJet.GetEntries()):
-    jet = branchGenJet.At(l)
+   for i in range(0,branchGenJet.GetEntries()):
+    jet = branchGenJet.At(i)
     lvofjet.SetPtEtaPhiM(jet.PT,jet.Eta,jet.Phi,jet.Mass)
     if jet.PT > 10:
      # Plot jet transverse momentum
@@ -122,31 +132,39 @@ for entry in range(0, numberOfEntries):
      pass
 
 
-   # Fill histogram with number of kaons
+   # Fill histogram with number of kaons/ Charge of jet
     if branchParticle.GetEntries() > 0:
       # Take all particles
-      Kaon=0
+      Kaon = 0
+      Charge = 0
       for l in range(0,branchParticle.GetEntries()):
        particle = branchParticle.At(l)
-       # filter Kaon(K+,K-) using PDG ID
-       if abs(particle.PID) == 321:
-        p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-        if p1.DeltaR(lvofjet) <= 0.4:
+       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+       if p1.DeltaR(lvofjet) <= 0.4:
+        # filter Kaon(k+,K-)
+        if abs(particle.PID) == 321:
          Kaon = Kaon + 1
         else:
          pass
+        # Charge
+        Charge = Charge + particle.Charge 
        else:
         pass
       if entry in jetD:
        histNCKaonD.Fill(Kaon)
+       histJetCD.Fill(Charge,particle.PT)
       if entry in jetU:
        histNCKaonU.Fill(Kaon)
+       histJetCU.Fill(Charge,particle.PT)
       if entry in jetS:
        histNCKaonS.Fill(Kaon)
+       histJetCS.Fill(Charge,particle.PT)
       if entry in jetC:
        histNCKaonC.Fill(Kaon)
+       histJetCC.Fill(Charge,particle.PT)
       if entry in jetB:
        histNCKaonB.Fill(Kaon)
+       histJetCB.Fill(Charge,particle.PT)
       else:
        pass
 
@@ -154,8 +172,8 @@ for entry in range(0, numberOfEntries):
     if branchParticle.GetEntries() > 0:
       # Take all particles
       Pion=0
-      for l in range(0,branchParticle.GetEntries()):
-       particle = branchParticle.At(l)
+      for n in range(0,branchParticle.GetEntries()):
+       particle = branchParticle.At(n)
        # filter Pion(pi+,pi-) using PDG ID
        if abs(particle.PID) == 211:
         p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)

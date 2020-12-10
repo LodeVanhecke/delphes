@@ -1,0 +1,9 @@
+========== Initialize the env variables ==========
+========== Change to the working directory ==========
+/storage_mnt/storage/user/lvanhecke/delphes
+
+========== Runnning Delphes ==========
+C= 21.4 22.1
+B= 30.2 27.8
+UC= 21.0 21.3
+DSB= 27.4 28.7
