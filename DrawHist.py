@@ -11,9 +11,9 @@ def Cosmetic(hist,xtitle,ytitle,norm,logx,logy,filename):
     hist[i].SetLineWidth(3)
     hist[i].SetTitle("")
     if norm == True:
-     hist[i].DrawNormalized('same e')
+     hist[i].DrawNormalized('same')
     else:
-     hist[i].Draw('same e')
+     hist[i].Draw('same')
     if logx == True:
      c.SetLogx()
     if logy == True:

@@ -96,7 +96,7 @@ for entry in range(0, numberOfEntries):
       if abs(branchParticle.At(particle.D1).PID) == 4:
        jetC = jetC+[entry]
       if abs(branchParticle.At(particle.D1).PID) == 5:
-       jetB =  jetB+[entry]
+       jetB = jetB+[entry]
       else:
        pass
      else:
