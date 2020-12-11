@@ -58,11 +58,23 @@ histNCKaonS = ROOT.TH1F("histNCKaonS", "Number of charged kaons in S jet", 10, 0
 histNCKaonC = ROOT.TH1F("histNCKaonC", "Number of charged kaons in C jet", 10, 0, 10)
 histNCKaonB = ROOT.TH1F("histNCKaonB", "Number of charged kaons in B jet", 10, 0, 10)
 
+histNKaonD = ROOT.TH1F("histNKaonD", "Number of kaons in D jet", 10, 0, 10)
+histNKaonU = ROOT.TH1F("histNKaonU", "Number of kaons in U jet", 10, 0, 10)
+histNKaonS = ROOT.TH1F("histNKaonS", "Number of kaons in S jet", 10, 0, 10)
+histNKaonC = ROOT.TH1F("histNKaonC", "Number of kaons in C jet", 10, 0, 10)
+histNKaonB = ROOT.TH1F("histNKaonB", "Number of kaons in B jet", 10, 0, 10)
+
 histNCPionD = ROOT.TH1F("histNCPionD", "Number of charged pions in D jet", 10, 0, 10)
 histNCPionU = ROOT.TH1F("histNCPionU", "Number of charged pions in U jet", 10, 0, 10)
 histNCPionS = ROOT.TH1F("histNCPionS", "Number of charged pions in S jet", 10, 0, 10)
 histNCPionC = ROOT.TH1F("histNCPionC", "Number of charged pions in C jet", 10, 0, 10)
 histNCPionB = ROOT.TH1F("histNCPionB", "Number of charged pions in B jet", 10, 0, 10)
+
+histNPionD = ROOT.TH1F("histNPionD", "Number of pions in D jet", 10, 0, 10)
+histNPionU = ROOT.TH1F("histNPionU", "Number of pions in U jet", 10, 0, 10)
+histNPionS = ROOT.TH1F("histNPionS", "Number of pions in S jet", 10, 0, 10)
+histNPionC = ROOT.TH1F("histNPionC", "Number of pions in C jet", 10, 0, 10)
+histNPionB = ROOT.TH1F("histNPionB", "Number of pions in B jet", 10, 0, 10)
 
 jetD = []
 jetU = []
@@ -132,70 +144,66 @@ for entry in range(0, numberOfEntries):
      pass
 
 
-   # Fill histogram with number of kaons/ Charge of jet
-    if branchParticle.GetEntries() > 0:
-      # Take all particles
-      Kaon = 0
-      Charge = 0
-      for l in range(0,branchParticle.GetEntries()):
-       particle = branchParticle.At(l)
-       p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-       if p1.DeltaR(lvofjet) <= 0.4:
-        # filter Kaon(k+,K-)
-        if abs(particle.PID) == 321:
-         Kaon = Kaon + 1
-        else:
-         pass
-        # Charge
-        Charge = Charge + particle.Charge 
-       else:
-        pass
-      if entry in jetD:
-       histNCKaonD.Fill(Kaon)
-       histJetCD.Fill(Charge,particle.PT)
-      if entry in jetU:
-       histNCKaonU.Fill(Kaon)
-       histJetCU.Fill(Charge,particle.PT)
-      if entry in jetS:
-       histNCKaonS.Fill(Kaon)
-       histJetCS.Fill(Charge,particle.PT)
-      if entry in jetC:
-       histNCKaonC.Fill(Kaon)
-       histJetCC.Fill(Charge,particle.PT)
-      if entry in jetB:
-       histNCKaonB.Fill(Kaon)
-       histJetCB.Fill(Charge,particle.PT)
-      else:
-       pass
-
-    # Fill histogram with number of pions
-    if branchParticle.GetEntries() > 0:
-      # Take all particles
-      Pion=0
-      for n in range(0,branchParticle.GetEntries()):
-       particle = branchParticle.At(n)
-       # filter Pion(pi+,pi-) using PDG ID
-       if abs(particle.PID) == 211:
+     # Fill histogram with number of kaons/ Charge of jet
+     if branchParticle.GetEntries() > 0:
+       # Take all particles
+       Kaon = 0
+       Kaon0 = 0
+       Pion = 0
+       Pion0 = 0
+       Charge = 0
+       for l in range(0,branchParticle.GetEntries()):
+        particle = branchParticle.At(l)
         p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
         if p1.DeltaR(lvofjet) <= 0.4:
-         Pion = Pion+1
-        else:
-         pass
+         # filter Kaon(K+,K-)
+         if abs(particle.PID) == 321:
+          Kaon = Kaon + 1
+         # filter neutral Kaon
+         if abs(particle.PID) == 311:
+          Kaon0= Kaon0 + 1
+         # filter Pion(P+,P-)
+         if abs(particle.PID) == 211:
+          Pion = Pion + 1
+         #filter neutral pion
+         if abs(particle.PID) == 111:
+          Pion0 = Pion0 + 1
+         else:
+          pass
+        # charge
+        Charge = Charge + particle.Charge
+       if entry in jetD:
+        histNCKaonD.Fill(Kaon)
+        histNKaonD.Fill(Kaon0)
+        histNCPionD.Fill(Pion)
+        histNPionD.Fill(Pion0)
+        histJetCD.Fill(Charge)
+       if entry in jetU:
+        histNCKaonU.Fill(Kaon)
+        histNKaonU.Fill(Kaon0)
+        histNCPionU.Fill(Pion)
+        histNPionU.Fill(Pion0)
+        histJetCU.Fill(Charge)
+       if entry in jetS:
+        histNCKaonS.Fill(Kaon)
+        histNKaonS.Fill(Kaon0)
+        histNCPionS.Fill(Pion)
+        histNPionS.Fill(Pion0)
+        histJetCS.Fill(Charge)
+       if entry in jetC:
+        histNCKaonC.Fill(Kaon)
+        histNKaonC.Fill(Kaon0)
+        histNCPionC.Fill(Pion)
+        histNPionC.Fill(Pion0)
+        histJetCC.Fill(Charge)
+       if entry in jetB:
+        histNCKaonB.Fill(Kaon)
+        histNKaonB.Fill(Kaon0)
+        histNCPionB.Fill(Pion)
+        histNPionB.Fill(Pion0)
+        histJetCB.Fill(Charge)
        else:
         pass
-      if entry in jetD:
-       histNCPionD.Fill(Pion)
-      if entry in jetU:
-       histNCPionU.Fill(Pion)
-      if entry in jetS:
-       histNCPionS.Fill(Pion)
-      if entry in jetC:
-       histNCPionC.Fill(Pion)
-      if entry in jetB:
-       histNCPionB.Fill(Pion)
-      else:
-       pass
-
 
 # Branching ratios
 
