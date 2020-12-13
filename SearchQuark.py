@@ -46,11 +46,11 @@ histJetPTC = ROOT.TH1F("histGenJetPTC", "P_{T} of all GenJets from C", 100, 0, 5
 histJetPTB = ROOT.TH1F("histGenJetPTB", "P_{T} of all GenJets from B", 100, 0, 50)
 hist=[histJetPTD,histJetPTU,histJetPTS,histJetPTC,histJetPTB]
 
-histJetCD = ROOT.TH1F("histJetCD", "Total charge of D jet", 200, -10, 10)
-histJetCU = ROOT.TH1F("histJetCU", "Total charge of U jet", 200, -10, 10)
-histJetCS = ROOT.TH1F("histJetCS", "Total charge of S jet", 200, -10, 10)
-histJetCC = ROOT.TH1F("histJetCC", "Total charge of C jet", 200, -10, 10)
-histJetCB = ROOT.TH1F("histJetCB", "Total charge of B jet", 200, -10, 10)
+histJetCD = ROOT.TH1F("histJetCD", "Total charge of D jet", 20, -10, 10)
+histJetCU = ROOT.TH1F("histJetCU", "Total charge of U jet", 20, -10, 10)
+histJetCS = ROOT.TH1F("histJetCS", "Total charge of S jet", 20, -10, 10)
+histJetCC = ROOT.TH1F("histJetCC", "Total charge of C jet", 20, -10, 10)
+histJetCB = ROOT.TH1F("histJetCB", "Total charge of B jet", 20, -10, 10)
 
 histNCKaonD = ROOT.TH1F("histNCKaonD", "Number of charged kaons in D jet", 10, 0, 10)
 histNCKaonU = ROOT.TH1F("histNCKaonU", "Number of charged kaons in U jet", 10, 0, 10)
