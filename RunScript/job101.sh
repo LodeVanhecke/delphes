@@ -10,4 +10,4 @@ echo ""
 
 echo "========== Runnning Delphes =========="
 
-python3 SearchQuark.py ee_Z_qq_LO_Batch101_Mg5v266_PY8243_Delp341.root
+python3 Variables.py ee_Z_qq_LO_Batch101_Mg5v266_PY8243_Delp341.root

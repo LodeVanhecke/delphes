@@ -58,6 +58,11 @@ histNCKaonS = ROOT.TH1F("histNCKaonS", "Number of charged kaons in S jet", 10, 0
 histNCKaonC = ROOT.TH1F("histNCKaonC", "Number of charged kaons in C jet", 10, 0, 10)
 histNCKaonB = ROOT.TH1F("histNCKaonB", "Number of charged kaons in B jet", 10, 0, 10)
 
+histCKaonLPT = ROOT.TH1F("histCKaonLPT", "P_{T} of charged kaons in L jet", 100, 0, 50)
+histCKaonSPT = ROOT.TH1F("histCKaonSPT", "P_{T} of charged kaons in S jet", 100, 0, 50)
+histCKaonCPT = ROOT.TH1F("histCKaonCPT", "P_{T} of charged kaons in C jet", 100, 0, 50)
+histCKaonBPT = ROOT.TH1F("histCKaonBPT", "P_{T} of charged kaons in B jet", 100, 0, 50)
+
 histNKaonD = ROOT.TH1F("histNKaonD", "Number of kaons in D jet", 10, 0, 10)
 histNKaonU = ROOT.TH1F("histNKaonU", "Number of kaons in U jet", 10, 0, 10)
 histNKaonS = ROOT.TH1F("histNKaonS", "Number of kaons in S jet", 10, 0, 10)
