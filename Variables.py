@@ -38,19 +38,22 @@ branchTrack = treeReader.UseBranch("Track")
 file = ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
 histNZ = ROOT.TH1F("histNZ", "Number of Z bosons in a event",18 , 0, 18)
 histNQ = ROOT.TH1F("histNQ", "Number of events with quark PDG ID",12, -6, 6)
+histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
+histMJet = ROOT.TH1F("histMJet", "Total invariant mass of jets in a event",100 , 0, 100)
+histM2Jet = ROOT.TH1F("histM2Jet", "Max invariant mass of two jets in a event",100 , 0, 100)
 
-#histJetPTD = ROOT.TH1F("histGenJetPTD", "P_{T} of all GenJets from D", 100, 0, 50)
-histJetPTL = ROOT.TH1F("histGenJetPTL", "P_{T} of all GenJets from L", 100, 0, 50)
-histJetPTS = ROOT.TH1F("histGenJetPTS", "P_{T} of all GenJets from S", 100, 0, 50)
-histJetPTC = ROOT.TH1F("histGenJetPTC", "P_{T} of all GenJets from C", 100, 0, 50)
-histJetPTB = ROOT.TH1F("histGenJetPTB", "P_{T} of all GenJets from B", 100, 0, 50)
+#histJetPTD = ROOT.TH1F("histJetPTD", "P_{T} of all GenJets from D", 50, 0, 50)
+histJetPTL = ROOT.TH1F("histJetPTL", "P_{T} of all GenJets from L", 50, 0, 50)
+histJetPTS = ROOT.TH1F("histJetPTS", "P_{T} of all GenJets from S", 50, 0, 50)
+histJetPTC = ROOT.TH1F("histJetPTC", "P_{T} of all GenJets from C", 50, 0, 50)
+histJetPTB = ROOT.TH1F("histJetPTB", "P_{T} of all GenJets from B", 50, 0, 50)
 #hist=[histJetPTL,histJetPTS,histJetPTC,histJetPTB]
 
-#histJetCD = ROOT.TH1F("histJetCD", "Total charge of D jet", 20, -10, 10)
-histJetCL = ROOT.TH1F("histJetCL", "Total charge of L jet", 20, -10, 10)
-histJetCS = ROOT.TH1F("histJetCS", "Total charge of S jet", 20, -10, 10)
-histJetCC = ROOT.TH1F("histJetCC", "Total charge of C jet", 20, -10, 10)
-histJetCB = ROOT.TH1F("histJetCB", "Total charge of B jet", 20, -10, 10)
+#histJetCD = ROOT.TH1F("histJetCD", "Total charge of D jet", 6, -1, 1)
+histJetCL = ROOT.TH1F("histJetCL", "Total charge of L jet", 6, -1, 1)
+histJetCS = ROOT.TH1F("histJetCS", "Total charge of S jet", 6, -1, 1)
+histJetCC = ROOT.TH1F("histJetCC", "Total charge of C jet", 6, -1, 1)
+histJetCB = ROOT.TH1F("histJetCB", "Total charge of B jet", 6, -1, 1)
 
 #histNCKaonD = ROOT.TH1F("histNCKaonD", "Number of charged kaons in D jet", 10, 0, 10)
 histNCKaonL = ROOT.TH1F("histNCKaonL", "Number of charged kaons in L jet", 10, 0, 10)
@@ -74,27 +77,28 @@ histNKaonPTS = ROOT.TH1F("histNKaonPTS", "P_{T} of neutral kaons in S jet", 100,
 histNKaonPTC = ROOT.TH1F("histNKaonPTC", "P_{T} of neutral kaons in C jet", 100, 0, 50)
 histNKaonPTB = ROOT.TH1F("histNKaonPTB", "P_{T} of neutral kaons in B jet", 100, 0, 50)
 
-#histNCPionD = ROOT.TH1F("histNCPionD", "Number of charged pions in D jet", 10, 0, 10)
-histNCPionL = ROOT.TH1F("histNCPionL", "Number of charged pions in L jet", 10, 0, 10)
-histNCPionS = ROOT.TH1F("histNCPionS", "Number of charged pions in S jet", 10, 0, 10)
-histNCPionC = ROOT.TH1F("histNCPionC", "Number of charged pions in C jet", 10, 0, 10)
-histNCPionB = ROOT.TH1F("histNCPionB", "Number of charged pions in B jet", 10, 0, 10)
+#histNCPionD = ROOT.TH1F("histNCPionD", "Number of charged pions in D jet", 10, 0, 22)
+histNCPionL = ROOT.TH1F("histNCPionL", "Number of charged pions in L jet", 10, 0, 22)
+histNCPionS = ROOT.TH1F("histNCPionS", "Number of charged pions in S jet", 10, 0, 22)
+histNCPionC = ROOT.TH1F("histNCPionC", "Number of charged pions in C jet", 10, 0, 22)
+histNCPionB = ROOT.TH1F("histNCPionB", "Number of charged pions in B jet", 10, 0, 22)
 
 histCPionPTL = ROOT.TH1F("histCPionPTL", "P_{T} of charged pions in L jet", 100, 0, 50)
 histCPionPTS = ROOT.TH1F("histCPionPTS", "P_{T} of charged pions in S jet", 100, 0, 50)
 histCPionPTC = ROOT.TH1F("histCPionPTC", "P_{T} of charged pions in C jet", 100, 0, 50)
 histCPionPTB = ROOT.TH1F("histCPionPTB", "P_{T} of charged pions in B jet", 100, 0, 50)
 
-#histNNPionD = ROOT.TH1F("histNNPionD", "Number of neutral pions in D jet", 10, 0, 10)
-histNNPionL = ROOT.TH1F("histNNPionL", "Number of neutral pions in L jet", 10, 0, 10)
-histNNPionS = ROOT.TH1F("histNNPionS", "Number of neutral pions in S jet", 10, 0, 10)
-histNNPionC = ROOT.TH1F("histNNPionC", "Number of neutral pions in C jet", 10, 0, 10)
-histNNPionB = ROOT.TH1F("histNNPionB", "Number of neutral pions in B jet", 10, 0, 10)
+#histNNPionD = ROOT.TH1F("histNNPionD", "Number of neutral pions in D jet", 10, 0, 16)
+histNNPionL = ROOT.TH1F("histNNPionL", "Number of neutral pions in L jet", 10, 0, 16)
+histNNPionS = ROOT.TH1F("histNNPionS", "Number of neutral pions in S jet", 10, 0, 16)
+histNNPionC = ROOT.TH1F("histNNPionC", "Number of neutral pions in C jet", 10, 0, 16)
+histNNPionB = ROOT.TH1F("histNNPionB", "Number of neutral pions in B jet", 10, 0, 16)
 
 histNPionPTL = ROOT.TH1F("histNPionPTL", "P_{T} of neutral pions in L jet", 100, 0, 50)
 histNPionPTS = ROOT.TH1F("histNPionPTS", "P_{T} of neutral pions in S jet", 100, 0, 50)
 histNPionPTC = ROOT.TH1F("histNPionPTC", "P_{T} of neutral pions in C jet", 100, 0, 50)
 histNPionPTB = ROOT.TH1F("histNPionPTB", "P_{T} of neutral pions in B jet", 100, 0, 50)
+
 
 jetL = []
 jetS = []
@@ -104,6 +108,13 @@ jetB = []
 p1 = ROOT.TLorentzVector()
 lvofjet = ROOT.TLorentzVector()
 t1 = ROOT.TVector3()
+
+p2=ROOT.TLorentzVector()
+lvofjet2=ROOT.TLorentzVector()
+
+jets=ROOT.TLorentzVector()
+jetsM=[]
+
 
 # Loop over all events
 for entry in range(0, numberOfEntries):
@@ -141,6 +152,8 @@ for entry in range(0, numberOfEntries):
   #PT of jets
   # If event contains at least 1 jet
   if branchGenJet.GetEntries() > 0:
+   # Number of jets in event
+   histNJet.Fill(branchGenJet.GetEntries())
    # Take all jets in event
    for i in range(0,branchGenJet.GetEntries()):
     jet = branchGenJet.At(i)
@@ -159,10 +172,7 @@ for entry in range(0, numberOfEntries):
       histJetPTB.Fill(jet.PT)
      else:
       pass
-    else:
-     pass
-
-
+  
      # Fill histogram with number of kaons/ Charge of jet
      if branchParticle.GetEntries() > 0:
        # Take all particles
@@ -176,6 +186,9 @@ for entry in range(0, numberOfEntries):
         particle = branchParticle.At(l)
         p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
         if p1.DeltaR(lvofjet) <= 0.4:
+         # charge of jet
+         Charge = Charge + particle.Charge*abs(particle.PT)
+         ParticlePT = ParticlePT + abs(particle.PT)
          # filter Kaon(K+,K-)
          if abs(particle.PID) == 321:
           Kaon = Kaon + 1
@@ -230,9 +243,8 @@ for entry in range(0, numberOfEntries):
            pass
          else:
           pass
-        # charge
-        Charge = Charge + particle.Charge*particle.PT
-        ParticlePT = ParticlePT + particle.PT
+        else:
+         pass
        Charge = Charge/ParticlePT
        if entry in jetL:
         histNCKaonL.Fill(Kaon)
@@ -266,7 +278,36 @@ for entry in range(0, numberOfEntries):
         histJetCB.Fill(Charge)
        else:
         pass
+     else:
+      pass
 
+    # Total lv of all jets in event
+    jets=jets+lvofjet
+    if lvofjet.M()>10:
+     # Loop over all jets in event
+     for j in range(i,branchGenJet.GetEntries()):
+      # Filter same jets
+      if j==i:
+       pass
+      if j!=i:
+       jet2 = branchGenJet.At(j)
+       lvofjet2.SetPtEtaPhiM(jet2.PT,jet2.Eta,jet2.Phi,jet2.Mass)
+       if lvofjet2.M()>10:
+        # Invariant mass of two jets
+        jetsM=jetsM+[(lvofjet+lvofjet2).M()]
+       else:
+        pass
+
+    else:
+     pass
+   
+  try:
+    # Plot max invariant mass of two jets in event
+    histM2Jet.Fill(max(jetsM))
+  except:
+    pass
+  # Plot total invariant mass of jets in event
+  histMJet.Fill(jets.M())
 
 
 file.Write()
