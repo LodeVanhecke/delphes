@@ -36,11 +36,49 @@ branchTrack = treeReader.UseBranch("Track")
 
 # Book histograms
 file = ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
+
 histNZ = ROOT.TH1F("histNZ", "Number of Z bosons in a event",18 , 0, 18)
 histNQ = ROOT.TH1F("histNQ", "Number of events with quark PDG ID",12, -6, 6)
-histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
-histMJet = ROOT.TH1F("histMJet", "Total invariant mass of jets in a event",100 , 0, 100)
-histM2Jet = ROOT.TH1F("histM2Jet", "Max invariant mass of two jets in a event",100 , 0, 100)
+
+histNEL = ROOT.TH1F("histNEL", "Number of events from L",10000 , 0, 10000)
+histNES = ROOT.TH1F("histNES", "Number of events from L",10000 , 0, 10000)
+histNEC = ROOT.TH1F("histNEC", "Number of events from L",10000 , 0, 10000)
+histNEB = ROOT.TH1F("histNEB", "Number of events from L",10000 , 0, 10000)
+
+histNJetL = ROOT.TH1F("histNJetL", "Number of jets in a event from L",18 , 0, 18)
+histNJetS = ROOT.TH1F("histNJetS", "Number of jets in a event from S",18 , 0, 18)
+histNJetC = ROOT.TH1F("histNJetC", "Number of jets in a event from C",18 , 0, 18)
+histNJetB = ROOT.TH1F("histNJetB", "Number of jets in a event from B",18 , 0, 18)
+
+histMJetL = ROOT.TH1F("histMJetL", "Total invariant mass of jets in a event from L",100 , 0, 100)
+histMJetS = ROOT.TH1F("histMJetS", "Total invariant mass of jets in a event from S",100 , 0, 100)
+histMJetC = ROOT.TH1F("histMJetC", "Total invariant mass of jets in a event from C",100 , 0, 100)
+histMJetB = ROOT.TH1F("histMJetB", "Total invariant mass of jets in a event from B",100 , 0, 100)
+
+histM2JetL = ROOT.TH1F("histM2JetL", "Max invariant mass of two jets in a event from L",100 , 0, 100)
+histM2JetS = ROOT.TH1F("histM2JetS", "Max invariant mass of two jets in a event from S",100 , 0, 100)
+histM2JetC = ROOT.TH1F("histM2JetC", "Max invariant mass of two jets in a event from C",100 , 0, 100)
+histM2JetB = ROOT.TH1F("histM2JetB", "Max invariant mass of two jets in a event from B",100 , 0, 100)
+
+histAngleCKaonL = ROOT.TH1F("histAngleCKaonL", "Angle between charged kaon and jet from L",100 , 0, 0.5)
+histAngleCKaonS = ROOT.TH1F("histAngleCKaonS", "Angle between charged kaon and jet from S",100 , 0, 0.5)
+histAngleCKaonC = ROOT.TH1F("histAngleCKaonC", "Angle between charged kaon and jet from C",100 , 0, 0.5)
+histAngleCKaonB = ROOT.TH1F("histAngleCKaonB", "Angle between charged kaon and jet from B",100 , 0, 0.5)
+
+histAngleNKaonL = ROOT.TH1F("histAngleNKaonL", "Angle between neutral kaon and jet from L",100 , 0, 0.5)
+histAngleNKaonS = ROOT.TH1F("histAngleNKaonS", "Angle between neutral kaon and jet from S",100 , 0, 0.5)
+histAngleNKaonC = ROOT.TH1F("histAngleNKaonC", "Angle between neutral kaon and jet from C",100 , 0, 0.5)
+histAngleNKaonB = ROOT.TH1F("histAngleNKaonB", "Angle between neutral kaon and jet from B",100 , 0, 0.5)
+
+histAngleCPionL = ROOT.TH1F("histAngleCPionL", "Angle between charged pion and jet from L",100 , 0, 0.5)
+histAngleCPionS = ROOT.TH1F("histAngleCPionS", "Angle between charged pion and jet from S",100 , 0, 0.5)
+histAngleCPionC = ROOT.TH1F("histAngleCPionC", "Angle between charged pion and jet from C",100 , 0, 0.5)
+histAngleCPionB = ROOT.TH1F("histAngleCPionB", "Angle between charged pion and jet from B",100 , 0, 0.5)
+
+histAngleNPionL = ROOT.TH1F("histAngleNPionL", "Angle between neutral pion and jet from L",100 , 0, 0.5)
+histAngleNPionS = ROOT.TH1F("histAngleNPionS", "Angle between neutral pion and jet from S",100 , 0, 0.5)
+histAngleNPionC = ROOT.TH1F("histAngleNPionC", "Angle between neutral pion and jet from C",100 , 0, 0.5)
+histAngleNPionB = ROOT.TH1F("histAngleNPionB", "Angle between neutral pion and jet from B",100 , 0, 0.5)
 
 #histJetPTD = ROOT.TH1F("histJetPTD", "P_{T} of all GenJets from D", 50, 0, 50)
 histJetPTL = ROOT.TH1F("histJetPTL", "P_{T} of all GenJets from L", 50, 0, 50)
@@ -109,7 +147,6 @@ p1 = ROOT.TLorentzVector()
 lvofjet = ROOT.TLorentzVector()
 t1 = ROOT.TVector3()
 
-p2=ROOT.TLorentzVector()
 lvofjet2=ROOT.TLorentzVector()
 
 jets=ROOT.TLorentzVector()
@@ -131,14 +168,19 @@ for entry in range(0, numberOfEntries):
       NZ = NZ+1
       if abs(branchParticle.At(particle.D1).PID) == 1:
        jetL = jetL+[entry]
+       histNJetL.Fill(branchGenJet.GetEntries())
       if abs(branchParticle.At(particle.D1).PID) == 2:
        jetL = jetL+[entry]
+       histNJetL.Fill(branchGenJet.GetEntries())
       if abs(branchParticle.At(particle.D1).PID) == 3:
        jetS = jetS+[entry]
+       histNJetS.Fill(branchGenJet.GetEntries())
       if abs(branchParticle.At(particle.D1).PID) == 4:
        jetC = jetC+[entry]
+       histNJetC.Fill(branchGenJet.GetEntries())
       if abs(branchParticle.At(particle.D1).PID) == 5:
        jetB = jetB+[entry]
+       histNJetB.Fill(branchGenJet.GetEntries())
       else:
        pass
      else:
@@ -147,13 +189,9 @@ for entry in range(0, numberOfEntries):
       pass
 
 
-  histNZ.Fill(NZ)
-
   #PT of jets
   # If event contains at least 1 jet
   if branchGenJet.GetEntries() > 0:
-   # Number of jets in event
-   histNJet.Fill(branchGenJet.GetEntries())
    # Take all jets in event
    for i in range(0,branchGenJet.GetEntries()):
     jet = branchGenJet.At(i)
@@ -194,12 +232,16 @@ for entry in range(0, numberOfEntries):
           Kaon = Kaon + 1
           if entry in jetL:
            histCKaonPTL.Fill(particle.PT)
+           histAngleCKaonL.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetS:
            histCKaonPTS.Fill(particle.PT)
+           histAngleCKaonS.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetC:
            histCKaonPTC.Fill(particle.PT)
+           histAngleCKaonC.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetB:
            histCKaonPTB.Fill(particle.PT)
+           histAngleCKaonB.Fill(p1.Vect().Angle(lvofjet.Vect()))
           else:
            pass
          # filter neutral Kaon
@@ -207,12 +249,16 @@ for entry in range(0, numberOfEntries):
           Kaon0= Kaon0 + 1
           if entry in jetL:
            histNKaonPTL.Fill(particle.PT)
+           histAngleNKaonL.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetS:
            histNKaonPTS.Fill(particle.PT)
+           histAngleNKaonS.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetC:
            histNKaonPTC.Fill(particle.PT)
+           histAngleNKaonC.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetB:
            histNKaonPTB.Fill(particle.PT)
+           histAngleNKaonB.Fill(p1.Vect().Angle(lvofjet.Vect()))
           else:
            pass
          # filter Pion(P+,P-)
@@ -220,12 +266,16 @@ for entry in range(0, numberOfEntries):
           Pion = Pion + 1
           if entry in jetL:
            histCPionPTL.Fill(particle.PT)
+           histAngleCPionL.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetS:
            histCPionPTS.Fill(particle.PT)
+           histAngleCPionS.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetC:
            histCPionPTC.Fill(particle.PT)
+           histAngleCPionC.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetB:
            histCPionPTB.Fill(particle.PT)
+           histAngleCPionB.Fill(p1.Vect().Angle(lvofjet.Vect()))
           else:
            pass
          #filter neutral pion
@@ -233,12 +283,16 @@ for entry in range(0, numberOfEntries):
           Pion0 = Pion0 + 1
           if entry in jetL:
            histNPionPTL.Fill(particle.PT)
+           histAngleNPionL.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetS:
            histNPionPTS.Fill(particle.PT)
+           histAngleNPionS.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetC:
            histNPionPTC.Fill(particle.PT)
+           histAngleNPionC.Fill(p1.Vect().Angle(lvofjet.Vect()))
           if entry in jetB:
            histNPionPTB.Fill(particle.PT)
+           histAngleNPionB.Fill(p1.Vect().Angle(lvofjet.Vect()))
           else:
            pass
          else:
@@ -302,12 +356,30 @@ for entry in range(0, numberOfEntries):
      pass
    
   try:
+    # Plot total invariant mass of jets in event
     # Plot max invariant mass of two jets in event
-    histM2Jet.Fill(max(jetsM))
+    if entry in jetL:
+     histMJetL.Fill(jets.M())
+     histM2JetL.Fill(max(jetsM))
+    if entry in jetS:
+     histMJetS.Fill(jets.M())
+     histM2JetS.Fill(max(jetsM))
+    if entry in jetC:
+     histMJetC.Fill(jets.M())
+     histM2JetC.Fill(max(jetsM))
+    if entry in jetB:
+     histMJetB.Fill(jets.M())
+     histM2JetB.Fill(max(jetsM))
+    else:
+     pass
   except:
     pass
-  # Plot total invariant mass of jets in event
-  histMJet.Fill(jets.M())
+
+
+histNEL.Fill(len(jetL))
+histNES.Fill(len(jetS))
+histNEC.Fill(len(jetC))
+histNEB.Fill(len(jetB))
 
 
 file.Write()

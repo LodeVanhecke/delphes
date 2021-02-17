@@ -29,14 +29,34 @@ def Cosmetic(hist,xtitle,ytitle,error,norm,logx,logy,filename):
 
 file = ROOT.TFile(sys.argv[1],"READ")
 
-histNJet = [file.Get('histNJet')]
+
+histNJet = [file.Get('histNJetL')]+[file.Get('histNJetS')]+[file.Get('histNJetC')]+[file.Get('histNJetB')]
 Cosmetic(histNJet,'Number of jets in event','',False,True,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
 
-histMJet = [file.Get('histMJet')]
+
+histNE = [file.Get('histNEL')]+[file.Get('histNES')]+[file.Get('histNEC')]+[file.Get('histNEB')]
+Cosmetic(histNE,'Number of events from quark','',False,True,False,False,'histNE_'+sys.argv[1][:-5]+'.png')
+
+
+histMJet = [file.Get('histMJetL')]+[file.Get('histMJetS')]+[file.Get('histMJetC')]+[file.Get('histMJetB')]
 Cosmetic(histMJet,'Total invariant mass of jets in a event','',False,True,False,False,'histMJet_'+sys.argv[1][:-5]+'.png')
 
-histM2Jet = [file.Get('histM2Jet')]
+
+histM2Jet = [file.Get('histM2JetL')]+[file.Get('histM2JetS')]+[file.Get('histM2JetC')]+[file.Get('histM2JetB')]
 Cosmetic(histM2Jet,'Max invariant mass of two jets in a event','',False,True,False,False,'histM2Jet_'+sys.argv[1][:-5]+'.png')
+
+
+histAngleCKaon = [file.Get('histAngleCKaonL')]+[file.Get('histAngleCKaonS')]+[file.Get('histAngleCKaonC')]+[file.Get('histAngleCKaonB')]
+Cosmetic(histAngleCKaon,'Angle between charged kaon and jet','',False,True,False,False,'histAngleCKaon_'+sys.argv[1][:-5]+'.png')
+
+histAngleNKaon = [file.Get('histAngleNKaonL')]+[file.Get('histAngleNKaonS')]+[file.Get('histAngleNKaonC')]+[file.Get('histAngleNKaonB')]
+Cosmetic(histAngleNKaon,'Angle between neutral kaon and jet','',False,True,False,False,'histAngleNKaon_'+sys.argv[1][:-5]+'.png')
+
+histAngleCPion = [file.Get('histAngleCPionL')]+[file.Get('histAngleCPionS')]+[file.Get('histAngleCPionC')]+[file.Get('histAngleCPionB')]
+Cosmetic(histAngleCPion,'Angle between charged pion and jet','',False,True,False,False,'histAngleCPion_'+sys.argv[1][:-5]+'.png')
+
+histAngleNPion = [file.Get('histAngleNPionL')]+[file.Get('histAngleNPionS')]+[file.Get('histAngleNPionC')]+[file.Get('histAngleNPionB')]
+Cosmetic(histAngleNPion,'Angle between neutral pion and jet','',False,True,False,False,'histAngleNPion_'+sys.argv[1][:-5]+'.png')
 
 
 histJetPT = [file.Get('histJetPTL')]+[file.Get('histJetPTS')]+[file.Get('histJetPTC')]+[file.Get('histJetPTB')]
