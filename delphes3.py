@@ -34,6 +34,8 @@ branchGenJet = treeReader.UseBranch("GenJet")
 branchParticle  = treeReader.UseBranch("Particle")
 
 # Book histograms
+file = ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
+
 histGenJetPT = ROOT.TH1F("histGenJetPT", "P_{T} of all GenJets", 100, 0, 70)
 histParticlePT = ROOT.TH1F("HistparticlePT", "P_{T} of all kaons", 100, 0, 50)
 histNJet = ROOT.TH1F("histNJet", "Number of jets in a event",18 , 0, 18)
@@ -98,14 +100,14 @@ for entry in range(0, numberOfEntries):
 
 
   # Fill histogram with PT of all kaons
-  if branchParticle.GetEntries() > 0:
-    # Take all particles
-    for l in range(0,branchParticle.GetEntries()):
-     particle = branchParticle.At(l)
-     # filter Kaon(K+,K-) using PDG ID
-     if abs(particle.PID)==321:
-      p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
-      histParticlePT.Fill(particle.PT)
+  #if branchParticle.GetEntries() > 0:
+  #  # Take all particles
+  #  for l in range(0,branchParticle.GetEntries()):
+  #   particle = branchParticle.At(l)
+  #   # filter Kaon(K+,K-) using PDG ID
+  #   if abs(particle.PID)==321:
+  #    p1.SetPtEtaPhiM(particle.PT,particle.Eta,particle.Phi,particle.Mass)
+  #    histParticlePT.Fill(particle.PT)
       # Take all particles for the second time
       #for m in range(0,branchParticle.GetEntries()):
       # particle2 = branchParticle.At(m)
@@ -126,27 +128,29 @@ for entry in range(0, numberOfEntries):
   # Plot total invariant mass of jets in event
   histMJ.Fill(jets.M())
 
+file.Write()
+
 # Show resulting histogram
-c1=ROOT.TCanvas('c1','P_{T} of all GenJets')
-histGenJetPT.Draw()
-c1.SaveAs("1.png")
-c2=ROOT.TCanvas('c2','P_{T} of all kaons')
-histParticlePT.Draw()
-c2.SaveAs("2.png")
-c3=ROOT.TCanvas('c3','Number of jets in a event')
-histNJet.Draw()
-c3.SaveAs("3.png")
-c4=ROOT.TCanvas('c4','Angle between Kaon and Jet')
-histAngle.Draw()
-c4.SaveAs("4.png")
+#c1=ROOT.TCanvas('c1','P_{T} of all GenJets')
+#histGenJetPT.Draw()
+#c1.SaveAs("1.png")
+#c2=ROOT.TCanvas('c2','P_{T} of all kaons')
+#histParticlePT.Draw()
+#c2.SaveAs("2.png")
+#c3=ROOT.TCanvas('c3','Number of jets in a event')
+#histNJet.Draw()
+#c3.SaveAs("3.png")
+#c4=ROOT.TCanvas('c4','Angle between Kaon and Jet')
+#histAngle.Draw()
+#c4.SaveAs("4.png")
 #c5=ROOT.TCanvas('c5','Invariant mass of two kaons')
 #histMK.Draw()
 #c5.SaveAs("5.png")
-c6=ROOT.TCanvas('c6','Total invariant mass of jets in a event')
-histMJ.Draw()
-c6.SaveAs("6.png")
-c7=ROOT.TCanvas('c7','Max invariant mass of two jets in a event')
-histMJ2.Draw()
-c7.SaveAs("7.png")
+#c6=ROOT.TCanvas('c6','Total invariant mass of jets in a event')
+#histMJ.Draw()
+#c6.SaveAs("6.png")
+#c7=ROOT.TCanvas('c7','Max invariant mass of two jets in a event')
+#histMJ2.Draw()
+#c7.SaveAs("7.png")
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
