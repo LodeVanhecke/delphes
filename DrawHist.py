@@ -35,7 +35,7 @@ histNJet = [file.Get('histNJetL')]+[file.Get('histNJetS')]+[file.Get('histNJetC'
 Cosmetic(histNJet,'Number of jets in event','',False,True,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
 
 histNE = [file.Get('histNEL')]+[file.Get('histNES')]+[file.Get('histNEC')]+[file.Get('histNEB')]
-Cosmetic(histNE,'Number of events from quark','',False,True,False,False,'histNE_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histNE,'Number of events from quark','',False,False,False,False,'histNE_'+sys.argv[1][:-5]+'.png')
 
 
 
