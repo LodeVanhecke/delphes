@@ -35,15 +35,15 @@ histNJet = [file.Get('histNJetL')]+[file.Get('histNJetS')]+[file.Get('histNJetC'
 Cosmetic(histNJet,'Number of jets in event','',False,True,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
 
 histNE = [file.Get('histNEL')]+[file.Get('histNES')]+[file.Get('histNEC')]+[file.Get('histNEB')]
-Cosmetic(histNE,'Number of events from quark','',False,False,False,False,'histNE_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histNE,'Number of events from quark','',False,True,False,False,'histNE_'+sys.argv[1][:-5]+'.png')
 
 
 
 histMJet = [file.Get('histMJetL')]+[file.Get('histMJetS')]+[file.Get('histMJetC')]+[file.Get('histMJetB')]
-Cosmetic(histMJet,'Total invariant mass of jets in a event','',False,False,False,False,'histMJet_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histMJet,'Total invariant mass of jets in a event','',False,True,False,False,'histMJet_'+sys.argv[1][:-5]+'.png')
 
 histM2Jet = [file.Get('histM2JetL')]+[file.Get('histM2JetS')]+[file.Get('histM2JetC')]+[file.Get('histM2JetB')]
-Cosmetic(histM2Jet,'Max invariant mass of two jets in a event','',False,False,False,False,'histM2Jet_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histM2Jet,'Max invariant mass of two jets in a event','',False,True,False,False,'histM2Jet_'+sys.argv[1][:-5]+'.png')
 
 
 

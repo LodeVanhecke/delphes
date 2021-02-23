@@ -1,0 +1,5 @@
+Error in <TClonesArray::At>: index -1 out of bounds (size: 285, this: 0x5479e10)
+Traceback (most recent call last):
+  File "Image.py", line 79, in <module>
+    p1.SetPtEtaPhiM(branchParticle.At(particle.D1).PT,branchParticle.At(particle.D1).Eta,branchParticle.At(particle.D1).Phi,branchParticle.At(particle.D1).Mass)
+AttributeError: 'TObject' object has no attribute 'PT'
