@@ -59,7 +59,7 @@ file = ROOT.TFile(sys.argv[1],"READ")
 
 
 histNJet = [file.Get('histNJetL')]+[file.Get('histNJetS')]+[file.Get('histNJetC')]+[file.Get('histNJetB')]
-Cosmetic(histNJet,'Number of jets in event','',False,True,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histNJet,'Number of jets in event','',False,False,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
 
 
 
