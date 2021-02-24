@@ -52,6 +52,7 @@ histNKaonS = ROOT.TH2F("histNKaonS", "Angle/pseudoRap of neutral kaons in S jet"
 histNKaonC = ROOT.TH2F("histNKaonC", "Angle/pseudoRap of neutral kaons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histNKaonB = ROOT.TH2F("histNKaonB", "Angle/pseudoRap of neutral kaons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 
+
 histCPionL = ROOT.TH2F("histCPionL", "Angle/pseudoRap of charged pions in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histCPionS = ROOT.TH2F("histCPionS", "Angle/pseudoRap of charged pions in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histCPionC = ROOT.TH2F("histCPionC", "Angle/pseudoRap of charged pions in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
@@ -61,6 +62,30 @@ histNPionL = ROOT.TH2F("histNPionL", "Angle/pseudoRap of neutral pions in L jet"
 histNPionS = ROOT.TH2F("histNPionS", "Angle/pseudoRap of neutral pions in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histNPionC = ROOT.TH2F("histNPionC", "Angle/pseudoRap of neutral pions in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histNPionB = ROOT.TH2F("histNPionB", "Angle/pseudoRap of neutral pions in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+
+
+histElecL = ROOT.TH2F("histElecL", "Angle/pseudoRap of electrons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histElecS = ROOT.TH2F("histElecS", "Angle/pseudoRap of electrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histElecC = ROOT.TH2F("histElecC", "Angle/pseudoRap of electrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histElecB = ROOT.TH2F("histElecB", "Angle/pseudoRap of electrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+
+
+histMuonL = ROOT.TH2F("histMuonL", "Angle/pseudoRap of muons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMuonS = ROOT.TH2F("histMuonS", "Angle/pseudoRap of muons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMuonC = ROOT.TH2F("histMuonC", "Angle/pseudoRap of muons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMuonB = ROOT.TH2F("histMuonB", "Angle/pseudoRap of muons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+
+
+histProtL = ROOT.TH2F("histProtL", "Angle/pseudoRap of protons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histProtS = ROOT.TH2F("histProtS", "Angle/pseudoRap of protons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histProtC = ROOT.TH2F("histProtC", "Angle/pseudoRap of protons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histProtB = ROOT.TH2F("histProtB", "Angle/pseudoRap of protons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+
+
+histNeutL = ROOT.TH2F("histNeutL", "Angle/pseudoRap of neutrons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histNeutS = ROOT.TH2F("histNeutS", "Angle/pseudoRap of neutrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histNeutC = ROOT.TH2F("histNeutC", "Angle/pseudoRap of neutrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histNeutB = ROOT.TH2F("histNeutB", "Angle/pseudoRap of neutrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 
 
 # Loop over all events
@@ -217,6 +242,74 @@ for entry in range(0, numberOfEntries):
       PT = abs(particle2.PT)/Jetq.PT
       Eta = Jetqlv.Eta()-p1.Eta()
       histNPionB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if abs(particle2.PID) == 11:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if abs(particle2.PID) == 13:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if particle2.PID == 2212:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if particle2.PID == 2112:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
     else:
      continue
    else:
@@ -291,6 +384,74 @@ for entry in range(0, numberOfEntries):
       PT = abs(particle2.PT)/Jetqbar.PT
       Eta = Jetqbarlv.Eta()-p1.Eta()
       histNPionB.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
+    if abs(particle2.PID) == 11:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histElecB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if abs(particle2.PID) == 13:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histMuonB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if particle2.PID == 2212:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histProtB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+    if particle2.PID == 2112:
+     if q.PID == 1 or q.PID == 2:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 3:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 4:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+     if q.PID == 5:
+      PT = abs(particle2.PT)/Jetq.PT
+      Eta = Jetqlv.Eta()-p1.Eta()
+      histNeutB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
     else:
      continue
    else:

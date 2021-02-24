@@ -75,3 +75,19 @@ Cosmetic2(histCPion,'DeltaPhi of charged pions in jet','DeltaEta of charged pion
 
 histNPion = [file.Get('histNPionL')]+[file.Get('histNPionS')]+[file.Get('histNPionC')]+[file.Get('histNPionB')]
 Cosmetic2(histNPion,'DeltaPhi of neutral pions in jet','DeltaEta of neutral pions in jet',False,True,False,False,'histNPion_'+sys.argv[1][:-5]+'.png')
+
+
+histElec = [file.Get('histElecL')]+[file.Get('histElecS')]+[file.Get('histElecC')]+[file.Get('histElecB')]
+Cosmetic2(histElec,'DeltaPhi of electrons/positrons in jet','DeltaEta of electrons/positrons in jet',False,True,False,False,'histElec_'+sys.argv[1][:-5]+'.png')
+
+
+histMuon = [file.Get('histMuonL')]+[file.Get('histMuonS')]+[file.Get('histMuonC')]+[file.Get('histMuonB')]
+Cosmetic2(histMuon,'DeltaPhi of muons (pos and neg) in jet','DeltaEta of muons (pos and neg) in jet',False,True,False,False,'histMuon_'+sys.argv[1][:-5]+'.png')
+
+
+histProt = [file.Get('histProtL')]+[file.Get('histProtS')]+[file.Get('histProtC')]+[file.Get('histProtB')]
+Cosmetic2(histProt,'DeltaPhi of protons in jet','DeltaEta of protons in jet',False,True,False,False,'histProt_'+sys.argv[1][:-5]+'.png')
+
+
+histNeut = [file.Get('histNeutL')]+[file.Get('histNeutS')]+[file.Get('histNeutC')]+[file.Get('histNeutB')]
+Cosmetic2(histNeut,'DeltaPhi of neutrons in jet','DeltaEta of neutrons in jet',False,True,False,False,'histNeut_'+sys.argv[1][:-5]+'.png')
