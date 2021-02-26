@@ -88,6 +88,12 @@ histNeutC = ROOT.TH2F("histNeutC", "Angle/pseudoRap of neutrons in C jet", 1000,
 histNeutB = ROOT.TH2F("histNeutB", "Angle/pseudoRap of neutrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 
 
+histPhotL = ROOT.TH2F("histPhotL", "Angle/pseudoRap of photons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histPhotS = ROOT.TH2F("histPhotS", "Angle/pseudoRap of photons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histPhotC = ROOT.TH2F("histPhotC", "Angle/pseudoRap of photons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histPhotB = ROOT.TH2F("histPhotB", "Angle/pseudoRap of photons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+
+
 
 histMaxCKaonL = ROOT.TH2F("histMaxCKaonL", "Angle/pseudoRap of max charged kaons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histMaxCKaonS = ROOT.TH2F("histMaxCKaonS", "Angle/pseudoRap of max charged kaons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
@@ -133,6 +139,11 @@ histMaxNeutL = ROOT.TH2F("histMaxNeutL", "Angle/pseudoRap of max neutrons in L j
 histMaxNeutS = ROOT.TH2F("histMaxNeutS", "Angle/pseudoRap of max neutrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histMaxNeutC = ROOT.TH2F("histMaxNeutC", "Angle/pseudoRap of max neutrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 histMaxNeutB = ROOT.TH2F("histMaxNeutB", "Angle/pseudoRap of max neutrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+
+histMaxPhotL = ROOT.TH2F("histMaxPhotL", "Angle/pseudoRap of max photons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxPhotS = ROOT.TH2F("histMaxPhotS", "Angle/pseudoRap of max photons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxPhotC = ROOT.TH2F("histMaxPhotC", "Angle/pseudoRap of max photons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxPhotB = ROOT.TH2F("histMaxPhotB", "Angle/pseudoRap of max photons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 
 
 histDCKaonL = ROOT.TH2F("histDCKaonL", "dx/dy of charged kaons in L jet", 1000, -10, 10, 1000, -10, 10)
@@ -180,6 +191,15 @@ histDNeutS = ROOT.TH2F("histDNeutS", "dx/dy of neutrons in S jet", 1000, -10, 10
 histDNeutC = ROOT.TH2F("histDNeutC", "dx/dy of neutrons in C jet", 1000, -10, 10, 1000, -10, 10)
 histDNeutB = ROOT.TH2F("histDNeutB", "dx/dy of neutrons in B jet", 1000, -10, 10, 1000, -10, 10)
 
+histDPhotL = ROOT.TH2F("histDPhotL", "dx/dy of photons in L jet", 1000, -10, 10, 1000, -10, 10)
+histDPhotS = ROOT.TH2F("histDPhotS", "dx/dy of photons in S jet", 1000, -10, 10, 1000, -10, 10)
+histDPhotC = ROOT.TH2F("histDPhotC", "dx/dy of photons in C jet", 1000, -10, 10, 1000, -10, 10)
+histDPhotB = ROOT.TH2F("histDPhotB", "dx/dy of photons in B jet", 1000, -10, 10, 1000, -10, 10)
+
+histCloseNeutL = ROOT.TH2F("histCloseNeutL", "Angle\pseudoRap of closest neutrons L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histCloseNeutS = ROOT.TH2F("histCloseNeutS", "Angle\pseudoRap of closest neutrons S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histCloseNeutC = ROOT.TH2F("histCloseNeutC", "Angle\pseudoRap of closest neutrons C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histCloseNeutB = ROOT.TH2F("histCloseNeutB", "Angle\pseudoRap of closest neutrons B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
 
 NL = 0
 NS = 0
@@ -309,7 +329,51 @@ for entry in range(0, numberOfEntries):
  NeutS =[0, 0, 0]
  NeutC =[0, 0, 0]
  NeutB =[0, 0, 0]
+ PhotL =[0, 0, 0]
+ PhotS =[0, 0, 0]
+ PhotC =[0, 0, 0]
+ PhotB =[0, 0, 0]
 
+ CloseCKaonL = [0, 0, 0]
+ CloseCKaonS = [0, 0, 0]
+ CloseCKaonC = [0, 0, 0]
+ CloseCKaonB = [0, 0, 0]
+ CloseNKaonL = [0, 0, 0]
+ CloseNKaonS = [0, 0, 0]
+ CloseNKaonC = [0, 0, 0]
+ CloseNKaonB = [0, 0, 0]
+ CloseCPionL = [0, 0, 0]
+ CloseCPionS = [0, 0, 0]
+ CloseCPionC = [0, 0, 0]
+ CloseCPionB = [0, 0, 0]
+ CloseNPionL = [0, 0, 0]
+ CloseNPionS = [0, 0, 0]
+ CloseNPionC = [0, 0, 0]
+ CloseNPionB = [0, 0, 0]
+ CloseCKaonL = [0, 0, 0]
+ CloseCKaonS = [0, 0, 0]
+ CloseCKaonC = [0, 0, 0]
+ CloseCKaonB = [0, 0, 0]
+ CloseElecL = [0, 0, 0]
+ CloseElecS = [0, 0, 0]
+ CloseElecC = [0, 0, 0]
+ CloseElecB = [0, 0, 0]
+ CloseMuonL = [0, 0, 0]
+ CloseMuonS = [0, 0, 0]
+ CloseMuonC = [0, 0, 0]
+ CloseMuonB = [0, 0, 0]
+ CloseProtL = [0, 0, 0]
+ CloseProtS = [0, 0, 0]
+ CloseProtC = [0, 0, 0]
+ CloseProtB = [0, 0, 0]
+ CloseNeutL =[100, 0, 0]
+ CloseNeutS =[100, 0, 0]
+ CloseNeutC =[100, 0, 0]
+ CloseNeutB =[100, 0, 0]
+ ClosePhotL =[100, 0, 0]
+ ClosePhotS =[0, 0, 0]
+ ClosePhotC =[0, 0, 0]
+ ClosePhotB =[0, 0, 0]
 
  for i in range(0,branchParticle.GetEntries()):
   p1 = ROOT.TLorentzVector()
@@ -324,200 +388,229 @@ for entry in range(0, numberOfEntries):
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CKaonL[2]: CKaonL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCKaonL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CKaonS[2]: CKaonS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCKaonS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CKaonC[2]: CKaonC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCKaonC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CKaonB[2]: CKaonB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCKaonB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 311:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NKaonL[2]: NKaonL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNKaonL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NKaonS[2]: NKaonS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNKaonS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NKaonC[2]: NKaonC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNKaonC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NKaonB[2]: NKaonB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNKaonB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 211:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CPionL[2]: CPionL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCPionL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CPionS[2]: CPionS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCPionS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CPionC[2]: CPionC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCPionC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > CPionB[2]: CPionB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDCPionB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 111:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NPionL[2]: NPionL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNPionL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NPionS[2]: NPionS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNPionS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NPionC[2]: NPionC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNPionC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NPionB[2]: NPionB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNPionB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 11:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecL[2]: ElecL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecS[2]: ElecS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecC[2]: ElecC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecB[2]: ElecB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 13:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonL[2]: MuonL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonS[2]: MuonS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonC[2]: MuonC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonB[2]: MuonB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if particle2.PID == 2212:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtL[2]: ProtL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtS[2]: ProtS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtC[2]: ProtC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtB[2]: ProtB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if particle2.PID == 2112:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutL[2]: NeutL = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutL[0]: CloseNeutL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutS[2]: NeutS = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutS[0]: CloseNeutS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutC[2]: NeutC = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutC[0]: CloseNeutC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutB[2]: NeutB = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutB[0]: CloseNeutB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+     if particle2.PID == 22:
+      if q.PID == 1 or q.PID == 2:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotL[2]: PhotL = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+      if q.PID == 3:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotS[2]: PhotS = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+      if q.PID == 4:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotC[2]: PhotC = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+      if q.PID == 5:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotB[2]: PhotB = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      else:
       continue
     else:
@@ -530,200 +623,229 @@ for entry in range(0, numberOfEntries):
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CKaonL[2]: CKaonL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonL.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCKaonL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CKaonS[2]: CKaonS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonS.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCKaonS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CKaonC[2]: CKaonC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonC.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCKaonC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CKaonB[2]: CKaonB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCKaonB.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCKaonB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCKaonB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 311:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NKaonL[2]: NKaonL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonL.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNKaonL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NKaonS[2]: NKaonS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonS.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNKaonS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NKaonC[2]: NKaonC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonC.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNKaonC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NKaonB[2]: NKaonB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNKaonB.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNKaonB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNKaonB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 211:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CPionL[2]: CPionL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionL.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCPionL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CPionS[2]: CPionS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionS.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCPionS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CPionC[2]: CPionC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionC.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCPionC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > CPionB[2]: CPionB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histCPionB.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDCPionB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDCPionB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 111:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NPionL[2]: NPionL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionL.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNPionL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NPionS[2]: NPionS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionS.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNPionS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NPionC[2]: NPionC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionC.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNPionC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        Eta = Jetqbarlv.Eta()-p1.Eta()
        if particle2.PT > NPionB[2]: NPionB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNPionB.Fill(p1.DeltaPhi(Jetqbarlv),Eta,PT)
-       histDNPionB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNPionB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 11:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecL[2]: ElecL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecS[2]: ElecS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecC[2]: ElecC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ElecB[2]: ElecB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histElecB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDElecB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDElecB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if abs(particle2.PID) == 13:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonL[2]: MuonL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonS[2]: MuonS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonC[2]: MuonC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > MuonB[2]: MuonB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histMuonB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDMuonB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDMuonB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if particle2.PID == 2212:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtL[2]: ProtL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtS[2]: ProtS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtC[2]: ProtC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > ProtB[2]: ProtB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histProtB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDProtB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDProtB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      if particle2.PID == 2112:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutL[2]: NeutL = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutL[0]: CloseNeutL = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutL.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutS[2]: NeutS = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutS[0]: CloseNeutS = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutS.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutC[2]: NeutC = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutC[0]: CloseNeutC = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutC.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetq.PT
        Eta = Jetqlv.Eta()-p1.Eta()
        if particle2.PT > NeutB[2]: NeutB = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutB[0]: CloseNeutB = [p1.DeltaPhi(Jetqlv),Eta,PT]
        histNeutB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
-       histDNeutB.Fill(math.sin(p1.DeltaPhi(Jetqlv))*particle2.D0,math.cos(p1.DeltaPhi(Jetqlv))*particle2.D0,PT)
+       histDNeutB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+     if particle2.PID == 22:
+      if q.PID == 1 or q.PID == 2:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotL[2]: PhotL = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotL.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotL.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+      if q.PID == 3:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotS[2]: PhotS = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotS.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotS.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+      if q.PID == 4:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotC[2]: PhotC = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotC.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotC.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
+      if q.PID == 5:
+       PT = abs(particle2.PT)/Jetq.PT
+       Eta = Jetqlv.Eta()-p1.Eta()
+       if particle2.PT > PhotB[2]: PhotB = [p1.DeltaPhi(Jetqlv),Eta,PT]
+       histPhotB.Fill(p1.DeltaPhi(Jetqlv),Eta,PT)
+       histDPhotB.Fill(math.sin(p1.Phi())*particle2.D0,math.cos(p1.Phi())*particle2.D0,PT)
      else:
       continue
     else:
@@ -773,7 +895,17 @@ for entry in range(0, numberOfEntries):
  histMaxNeutC.Fill(NeutC[0],NeutC[1],NeutC[2])
  histMaxNeutB.Fill(NeutB[0],NeutB[1],NeutB[2])
 
+ histMaxPhotL.Fill(PhotL[0],PhotL[1],PhotL[2])
+ histMaxPhotS.Fill(PhotS[0],PhotS[1],PhotS[2])
+ histMaxPhotC.Fill(PhotC[0],PhotC[1],PhotC[2])
+ histMaxPhotB.Fill(PhotB[0],PhotB[1],PhotB[2])
 
+ histCloseNeutL.Fill(CloseNeutL[0],CloseNeutL[1],CloseNeutL[2])
+ histCloseNeutS.Fill(CloseNeutS[0],CloseNeutS[1],CloseNeutS[2])
+ histCloseNeutC.Fill(CloseNeutC[0],CloseNeutC[1],CloseNeutC[2])
+ histCloseNeutB.Fill(CloseNeutB[0],CloseNeutB[1],CloseNeutB[2])
+
+ 
 # Normalize hists
 
 histCKaonL *= 1/NL
@@ -816,6 +948,11 @@ histNeutS *= 1/NS
 histNeutC *= 1/NC
 histNeutB *= 1/NB
 
+histPhotL *= 1/NL
+histPhotS *= 1/NS
+histPhotC *= 1/NC
+histPhotB *= 1/NB
+
 
 histMaxCKaonL *= 1/NL
 histMaxCKaonS *= 1/NS
@@ -857,6 +994,11 @@ histMaxNeutS *= 1/NS
 histMaxNeutC *= 1/NC
 histMaxNeutB *= 1/NB
 
+histMaxPhotL *= 1/NL
+histMaxPhotS *= 1/NS
+histMaxPhotC *= 1/NC
+histMaxPhotB *= 1/NB
+
 
 histDCKaonL *= 1/NL
 histDCKaonS *= 1/NS
@@ -897,6 +1039,18 @@ histDNeutL *= 1/NL
 histDNeutS *= 1/NS
 histDNeutC *= 1/NC
 histDNeutB *= 1/NB
+
+histDPhotL *= 1/NL
+histDPhotS *= 1/NS
+histDPhotC *= 1/NC
+histDPhotB *= 1/NB
+
+
+histCloseNeutL *= 1/NL
+histCloseNeutS *= 1/NS
+histCloseNeutC *= 1/NC
+histCloseNeutB *= 1/NB
+
 
 
 file.Write()

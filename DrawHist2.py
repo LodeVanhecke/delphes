@@ -40,17 +40,17 @@ def Cosmetic2(hist,xtitle,ytitle,error,norm,logx,logy,filename):
     if error == True:
      if norm == True:
       c.cd(i+1)
-      hist[i].DrawNormalized('e box')
+      hist[i].DrawNormalized('e colz')
      else:
       c.cd(i+1)
       hist[i].Draw('e box')
     else:
      if norm == True:
       c.cd(i+1)
-      hist[i].DrawNormalized('box')
+      hist[i].DrawNormalized('colz')
      else:
       c.cd(i+1)
-      hist[i].Draw('box')
+      hist[i].Draw('colz')
     if logx == True:
      c.SetLogx()
     if logy == True:
@@ -96,6 +96,8 @@ Cosmetic2(histProt,'DeltaPhi of protons in jet','DeltaEta of protons in jet',Fal
 histNeut = [file.Get('histNeutL')]+[file.Get('histNeutS')]+[file.Get('histNeutC')]+[file.Get('histNeutB')]
 Cosmetic2(histNeut,'DeltaPhi of neutrons in jet','DeltaEta of neutrons in jet',False,False,False,False,'histNeut_'+sys.argv[1][:-5]+'.png')
 
+histPhot = [file.Get('histPhotL')]+[file.Get('histPhotS')]+[file.Get('histPhotC')]+[file.Get('histPhotB')]
+Cosmetic2(histPhot,'DeltaPhi of photons in jet','DeltaEta of photons in jet',False,False,False,False,'histPhot_'+sys.argv[1][:-5]+'.png')
 
 
 
@@ -129,6 +131,9 @@ histMaxNeut = [file.Get('histMaxNeutL')]+[file.Get('histMaxNeutS')]+[file.Get('h
 Cosmetic2(histMaxNeut,'DeltaPhi of max neutrons in jet','DeltaEta of max neutrons in jet',False,False,False,False,'histMaxNeut_'+sys.argv[1][:-5]+'.png')
 
 
+histMaxPhot = [file.Get('histMaxPhotL')]+[file.Get('histMaxPhotS')]+[file.Get('histMaxPhotC')]+[file.Get('histMaxPhotB')]
+Cosmetic2(histMaxPhot,'DeltaPhi of max photons in jet','DeltaEta of max photons in jet',False,False,False,False,'histMaxPhot_'+sys.argv[1][:-5]+'.png')
+
 
 
 histDCKaon = [file.Get('histDCKaonL')]+[file.Get('histDCKaonS')]+[file.Get('histDCKaonC')]+[file.Get('histDCKaonB')]
@@ -159,3 +164,12 @@ Cosmetic2(histDProt,'dx of protons in jet','dy of protons in jet',False,False,Fa
 
 histDNeut = [file.Get('histDNeutL')]+[file.Get('histDNeutS')]+[file.Get('histDNeutC')]+[file.Get('histDNeutB')]
 Cosmetic2(histDNeut,'dx of neutrons in jet','dy of neutrons in jet',False,False,False,False,'histDNeut_'+sys.argv[1][:-5]+'.png')
+
+histDPhot = [file.Get('histDPhotL')]+[file.Get('histDPhotS')]+[file.Get('histDPhotC')]+[file.Get('histDPhotB')]
+Cosmetic2(histDPhot,'dx of photons in jet','dy of photons in jet',False,False,False,False,'histDPhot_'+sys.argv[1][:-5]+'.png')
+
+
+
+
+histCloseNeut = [file.Get('histCloseNeutL')]+[file.Get('histCloseNeutS')]+[file.Get('histCloseNeutC')]+[file.Get('histCloseNeutB')]
+Cosmetic2(histCloseNeut,'DeltaPhi of closest neutrons in jet','DeltaEta of closest neutrons in jet',False,False,False,False,'histCloseNeut_'+sys.argv[1][:-5]+'.png')
