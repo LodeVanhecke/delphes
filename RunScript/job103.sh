@@ -10,4 +10,4 @@ echo ""
 
 echo "========== Runnning Delphes =========="
 
-python3 Image.py ee_Z_qq_LO_Batch103_Mg5v266_PY8243_Delp341.root
+python3 Image2.py ee_Z_qq_LO_Batch103_Mg5v266_PY8243_Delp341.root
