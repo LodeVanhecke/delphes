@@ -24,7 +24,7 @@ def Cosmetic(hist,xtitle,ytitle,error,norm,logx,logy,filename):
      c.SetLogx()
     if logy == True:
      c.SetLogy()
-  c.BuildLegend()
+  c.BuildLegend(1,1,1,1)
   c.SaveAs(filename)
 
 def Cosmetic2(hist,xtitle,ytitle,error,norm,logx,logy,filename):
@@ -64,7 +64,7 @@ file = ROOT.TFile(sys.argv[1],"READ")
 
 
 histNJet = [file.Get('histNJetL')]+[file.Get('histNJetS')]+[file.Get('histNJetC')]+[file.Get('histNJetB')]
-Cosmetic(histNJet,'Number of jets in event','',False,True,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histNJet,'Number of jets in event','',False,False,False,False,'histNJet_'+sys.argv[1][:-5]+'.png')
 
 
 histCKaon = [file.Get('histCKaonL')]+[file.Get('histCKaonS')]+[file.Get('histCKaonC')]+[file.Get('histCKaonB')]

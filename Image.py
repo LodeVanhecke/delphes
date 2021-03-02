@@ -42,164 +42,164 @@ histNJetC = ROOT.TH1F("histNJetC", "Number of jets in a event from C",10 , 0, 10
 histNJetB = ROOT.TH1F("histNJetB", "Number of jets in a event from B",10 , 0, 10)
 
 
-histCKaonL = ROOT.TH2F("histCKaonL", "Angle/pseudoRap of charged kaons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCKaonS = ROOT.TH2F("histCKaonS", "Angle/pseudoRap of charged kaons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCKaonC = ROOT.TH2F("histCKaonC", "Angle/pseudoRap of charged kaons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCKaonB = ROOT.TH2F("histCKaonB", "Angle/pseudoRap of charged kaons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histCKaonL = ROOT.TH2F("histCKaonL", "Angle/pseudoRap of charged kaons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCKaonS = ROOT.TH2F("histCKaonS", "Angle/pseudoRap of charged kaons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCKaonC = ROOT.TH2F("histCKaonC", "Angle/pseudoRap of charged kaons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCKaonB = ROOT.TH2F("histCKaonB", "Angle/pseudoRap of charged kaons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
-histNKaonL = ROOT.TH2F("histNKaonL", "Angle/pseudoRap of neutral kaons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNKaonS = ROOT.TH2F("histNKaonS", "Angle/pseudoRap of neutral kaons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNKaonC = ROOT.TH2F("histNKaonC", "Angle/pseudoRap of neutral kaons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNKaonB = ROOT.TH2F("histNKaonB", "Angle/pseudoRap of neutral kaons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-
-
-histCPionL = ROOT.TH2F("histCPionL", "Angle/pseudoRap of charged pions in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCPionS = ROOT.TH2F("histCPionS", "Angle/pseudoRap of charged pions in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCPionC = ROOT.TH2F("histCPionC", "Angle/pseudoRap of charged pions in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCPionB = ROOT.TH2F("histCPionB", "Angle/pseudoRap of charged pions in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-
-histNPionL = ROOT.TH2F("histNPionL", "Angle/pseudoRap of neutral pions in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNPionS = ROOT.TH2F("histNPionS", "Angle/pseudoRap of neutral pions in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNPionC = ROOT.TH2F("histNPionC", "Angle/pseudoRap of neutral pions in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNPionB = ROOT.TH2F("histNPionB", "Angle/pseudoRap of neutral pions in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histNKaonL = ROOT.TH2F("histNKaonL", "Angle/pseudoRap of neutral kaons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNKaonS = ROOT.TH2F("histNKaonS", "Angle/pseudoRap of neutral kaons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNKaonC = ROOT.TH2F("histNKaonC", "Angle/pseudoRap of neutral kaons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNKaonB = ROOT.TH2F("histNKaonB", "Angle/pseudoRap of neutral kaons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histElecL = ROOT.TH2F("histElecL", "Angle/pseudoRap of electrons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histElecS = ROOT.TH2F("histElecS", "Angle/pseudoRap of electrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histElecC = ROOT.TH2F("histElecC", "Angle/pseudoRap of electrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histElecB = ROOT.TH2F("histElecB", "Angle/pseudoRap of electrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histCPionL = ROOT.TH2F("histCPionL", "Angle/pseudoRap of charged pions in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCPionS = ROOT.TH2F("histCPionS", "Angle/pseudoRap of charged pions in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCPionC = ROOT.TH2F("histCPionC", "Angle/pseudoRap of charged pions in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCPionB = ROOT.TH2F("histCPionB", "Angle/pseudoRap of charged pions in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+
+histNPionL = ROOT.TH2F("histNPionL", "Angle/pseudoRap of neutral pions in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNPionS = ROOT.TH2F("histNPionS", "Angle/pseudoRap of neutral pions in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNPionC = ROOT.TH2F("histNPionC", "Angle/pseudoRap of neutral pions in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNPionB = ROOT.TH2F("histNPionB", "Angle/pseudoRap of neutral pions in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histMuonL = ROOT.TH2F("histMuonL", "Angle/pseudoRap of muons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMuonS = ROOT.TH2F("histMuonS", "Angle/pseudoRap of muons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMuonC = ROOT.TH2F("histMuonC", "Angle/pseudoRap of muons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMuonB = ROOT.TH2F("histMuonB", "Angle/pseudoRap of muons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histElecL = ROOT.TH2F("histElecL", "Angle/pseudoRap of electrons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histElecS = ROOT.TH2F("histElecS", "Angle/pseudoRap of electrons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histElecC = ROOT.TH2F("histElecC", "Angle/pseudoRap of electrons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histElecB = ROOT.TH2F("histElecB", "Angle/pseudoRap of electrons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histProtL = ROOT.TH2F("histProtL", "Angle/pseudoRap of protons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histProtS = ROOT.TH2F("histProtS", "Angle/pseudoRap of protons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histProtC = ROOT.TH2F("histProtC", "Angle/pseudoRap of protons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histProtB = ROOT.TH2F("histProtB", "Angle/pseudoRap of protons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMuonL = ROOT.TH2F("histMuonL", "Angle/pseudoRap of muons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMuonS = ROOT.TH2F("histMuonS", "Angle/pseudoRap of muons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMuonC = ROOT.TH2F("histMuonC", "Angle/pseudoRap of muons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMuonB = ROOT.TH2F("histMuonB", "Angle/pseudoRap of muons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histNeutL = ROOT.TH2F("histNeutL", "Angle/pseudoRap of neutrons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNeutS = ROOT.TH2F("histNeutS", "Angle/pseudoRap of neutrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNeutC = ROOT.TH2F("histNeutC", "Angle/pseudoRap of neutrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histNeutB = ROOT.TH2F("histNeutB", "Angle/pseudoRap of neutrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histProtL = ROOT.TH2F("histProtL", "Angle/pseudoRap of protons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histProtS = ROOT.TH2F("histProtS", "Angle/pseudoRap of protons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histProtC = ROOT.TH2F("histProtC", "Angle/pseudoRap of protons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histProtB = ROOT.TH2F("histProtB", "Angle/pseudoRap of protons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histPhotL = ROOT.TH2F("histPhotL", "Angle/pseudoRap of photons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histPhotS = ROOT.TH2F("histPhotS", "Angle/pseudoRap of photons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histPhotC = ROOT.TH2F("histPhotC", "Angle/pseudoRap of photons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histPhotB = ROOT.TH2F("histPhotB", "Angle/pseudoRap of photons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histNeutL = ROOT.TH2F("histNeutL", "Angle/pseudoRap of neutrons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNeutS = ROOT.TH2F("histNeutS", "Angle/pseudoRap of neutrons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNeutC = ROOT.TH2F("histNeutC", "Angle/pseudoRap of neutrons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histNeutB = ROOT.TH2F("histNeutB", "Angle/pseudoRap of neutrons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+
+
+histPhotL = ROOT.TH2F("histPhotL", "Angle/pseudoRap of photons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histPhotS = ROOT.TH2F("histPhotS", "Angle/pseudoRap of photons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histPhotC = ROOT.TH2F("histPhotC", "Angle/pseudoRap of photons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histPhotB = ROOT.TH2F("histPhotB", "Angle/pseudoRap of photons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
 
-histMaxCKaonL = ROOT.TH2F("histMaxCKaonL", "Angle/pseudoRap of max charged kaons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxCKaonS = ROOT.TH2F("histMaxCKaonS", "Angle/pseudoRap of max charged kaons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxCKaonC = ROOT.TH2F("histMaxCKaonC", "Angle/pseudoRap of max charged kaons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxCKaonB = ROOT.TH2F("histMaxCKaonB", "Angle/pseudoRap of max charged kaons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxCKaonL = ROOT.TH2F("histMaxCKaonL", "Angle/pseudoRap of max charged kaons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxCKaonS = ROOT.TH2F("histMaxCKaonS", "Angle/pseudoRap of max charged kaons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxCKaonC = ROOT.TH2F("histMaxCKaonC", "Angle/pseudoRap of max charged kaons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxCKaonB = ROOT.TH2F("histMaxCKaonB", "Angle/pseudoRap of max charged kaons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
-histMaxNKaonL = ROOT.TH2F("histMaxNKaonL", "Angle/pseudoRap of max neutral kaons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNKaonS = ROOT.TH2F("histMaxNKaonS", "Angle/pseudoRap of max neutral kaons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNKaonC = ROOT.TH2F("histMaxNKaonC", "Angle/pseudoRap of max neutral kaons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNKaonB = ROOT.TH2F("histMaxNKaonB", "Angle/pseudoRap of max neutral kaons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-
-
-histMaxCPionL = ROOT.TH2F("histMaxCPionL", "Angle/pseudoRap of max charged pions in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxCPionS = ROOT.TH2F("histMaxCPionS", "Angle/pseudoRap of max charged pions in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxCPionC = ROOT.TH2F("histMaxCPionC", "Angle/pseudoRap of max charged pions in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxCPionB = ROOT.TH2F("histMaxCPionB", "Angle/pseudoRap of max charged pions in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-
-histMaxNPionL = ROOT.TH2F("histMaxNPionL", "Angle/pseudoRap of max neutral pions in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNPionS = ROOT.TH2F("histMaxNPionS", "Angle/pseudoRap of max neutral pions in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNPionC = ROOT.TH2F("histMaxNPionC", "Angle/pseudoRap of max neutral pions in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNPionB = ROOT.TH2F("histMaxNPionB", "Angle/pseudoRap of max neutral pions in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxNKaonL = ROOT.TH2F("histMaxNKaonL", "Angle/pseudoRap of max neutral kaons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNKaonS = ROOT.TH2F("histMaxNKaonS", "Angle/pseudoRap of max neutral kaons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNKaonC = ROOT.TH2F("histMaxNKaonC", "Angle/pseudoRap of max neutral kaons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNKaonB = ROOT.TH2F("histMaxNKaonB", "Angle/pseudoRap of max neutral kaons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histMaxElecL = ROOT.TH2F("histMaxElecL", "Angle/pseudoRap of max electrons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxElecS = ROOT.TH2F("histMaxElecS", "Angle/pseudoRap of max electrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxElecC = ROOT.TH2F("histMaxElecC", "Angle/pseudoRap of max electrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxElecB = ROOT.TH2F("histMaxElecB", "Angle/pseudoRap of max electrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxCPionL = ROOT.TH2F("histMaxCPionL", "Angle/pseudoRap of max charged pions in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxCPionS = ROOT.TH2F("histMaxCPionS", "Angle/pseudoRap of max charged pions in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxCPionC = ROOT.TH2F("histMaxCPionC", "Angle/pseudoRap of max charged pions in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxCPionB = ROOT.TH2F("histMaxCPionB", "Angle/pseudoRap of max charged pions in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+
+histMaxNPionL = ROOT.TH2F("histMaxNPionL", "Angle/pseudoRap of max neutral pions in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNPionS = ROOT.TH2F("histMaxNPionS", "Angle/pseudoRap of max neutral pions in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNPionC = ROOT.TH2F("histMaxNPionC", "Angle/pseudoRap of max neutral pions in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNPionB = ROOT.TH2F("histMaxNPionB", "Angle/pseudoRap of max neutral pions in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histMaxMuonL = ROOT.TH2F("histMaxMuonL", "Angle/pseudoRap of max muons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxMuonS = ROOT.TH2F("histMaxMuonS", "Angle/pseudoRap of max muons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxMuonC = ROOT.TH2F("histMaxMuonC", "Angle/pseudoRap of max muons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxMuonB = ROOT.TH2F("histMaxMuonB", "Angle/pseudoRap of max muons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxElecL = ROOT.TH2F("histMaxElecL", "Angle/pseudoRap of max electrons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxElecS = ROOT.TH2F("histMaxElecS", "Angle/pseudoRap of max electrons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxElecC = ROOT.TH2F("histMaxElecC", "Angle/pseudoRap of max electrons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxElecB = ROOT.TH2F("histMaxElecB", "Angle/pseudoRap of max electrons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histMaxProtL = ROOT.TH2F("histMaxProtL", "Angle/pseudoRap of max protons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxProtS = ROOT.TH2F("histMaxProtS", "Angle/pseudoRap of max protons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxProtC = ROOT.TH2F("histMaxProtC", "Angle/pseudoRap of max protons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxProtB = ROOT.TH2F("histMaxProtB", "Angle/pseudoRap of max protons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxMuonL = ROOT.TH2F("histMaxMuonL", "Angle/pseudoRap of max muons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxMuonS = ROOT.TH2F("histMaxMuonS", "Angle/pseudoRap of max muons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxMuonC = ROOT.TH2F("histMaxMuonC", "Angle/pseudoRap of max muons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxMuonB = ROOT.TH2F("histMaxMuonB", "Angle/pseudoRap of max muons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histMaxNeutL = ROOT.TH2F("histMaxNeutL", "Angle/pseudoRap of max neutrons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNeutS = ROOT.TH2F("histMaxNeutS", "Angle/pseudoRap of max neutrons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNeutC = ROOT.TH2F("histMaxNeutC", "Angle/pseudoRap of max neutrons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxNeutB = ROOT.TH2F("histMaxNeutB", "Angle/pseudoRap of max neutrons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-
-histMaxPhotL = ROOT.TH2F("histMaxPhotL", "Angle/pseudoRap of max photons in L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxPhotS = ROOT.TH2F("histMaxPhotS", "Angle/pseudoRap of max photons in S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxPhotC = ROOT.TH2F("histMaxPhotC", "Angle/pseudoRap of max photons in C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histMaxPhotB = ROOT.TH2F("histMaxPhotB", "Angle/pseudoRap of max photons in B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histMaxProtL = ROOT.TH2F("histMaxProtL", "Angle/pseudoRap of max protons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxProtS = ROOT.TH2F("histMaxProtS", "Angle/pseudoRap of max protons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxProtC = ROOT.TH2F("histMaxProtC", "Angle/pseudoRap of max protons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxProtB = ROOT.TH2F("histMaxProtB", "Angle/pseudoRap of max protons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histDCKaonL = ROOT.TH2F("histDCKaonL", "dx/dy of charged kaons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDCKaonS = ROOT.TH2F("histDCKaonS", "dx/dy of charged kaons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDCKaonC = ROOT.TH2F("histDCKaonC", "dx/dy of charged kaons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDCKaonB = ROOT.TH2F("histDCKaonB", "dx/dy of charged kaons in B jet", 1000, -10, 10, 1000, -10, 10)
+histMaxNeutL = ROOT.TH2F("histMaxNeutL", "Angle/pseudoRap of max neutrons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNeutS = ROOT.TH2F("histMaxNeutS", "Angle/pseudoRap of max neutrons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNeutC = ROOT.TH2F("histMaxNeutC", "Angle/pseudoRap of max neutrons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxNeutB = ROOT.TH2F("histMaxNeutB", "Angle/pseudoRap of max neutrons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
-histDNKaonL = ROOT.TH2F("histDNKaonL", "dx/dy of neutral kaons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDNKaonS = ROOT.TH2F("histDNKaonS", "dx/dy of neutral kaons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDNKaonC = ROOT.TH2F("histDNKaonC", "dx/dy of neutral kaons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDNKaonB = ROOT.TH2F("histDNKaonB", "dx/dy of neutral kaons in B jet", 1000, -10, 10, 1000, -10, 10)
-
-
-histDCPionL = ROOT.TH2F("histDCPionL", "dx/dy of charged pions in L jet", 1000, -10, 10, 1000, -10, 10)
-histDCPionS = ROOT.TH2F("histDCPionS", "dx/dy of charged pions in S jet", 1000, -10, 10, 1000, -10, 10)
-histDCPionC = ROOT.TH2F("histDCPionC", "dx/dy of charged pions in C jet", 1000, -10, 10, 1000, -10, 10)
-histDCPionB = ROOT.TH2F("histDCPionB", "dx/dy of charged pions in B jet", 1000, -10, 10, 1000, -10, 10)
-
-histDNPionL = ROOT.TH2F("histDNPionL", "dx/dy of neutral pions in L jet", 1000, -10, 10, 1000, -10, 10)
-histDNPionS = ROOT.TH2F("histDNPionS", "dx/dy of neutral pions in S jet", 1000, -10, 10, 1000, -10, 10)
-histDNPionC = ROOT.TH2F("histDNPionC", "dx/dy of neutral pions in C jet", 1000, -10, 10, 1000, -10, 10)
-histDNPionB = ROOT.TH2F("histDNPionB", "dx/dy of neutral pions in B jet", 1000, -10, 10, 1000, -10, 10)
+histMaxPhotL = ROOT.TH2F("histMaxPhotL", "Angle/pseudoRap of max photons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxPhotS = ROOT.TH2F("histMaxPhotS", "Angle/pseudoRap of max photons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxPhotC = ROOT.TH2F("histMaxPhotC", "Angle/pseudoRap of max photons in C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histMaxPhotB = ROOT.TH2F("histMaxPhotB", "Angle/pseudoRap of max photons in B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histDElecL = ROOT.TH2F("histDElecL", "dx/dy of electrons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDElecS = ROOT.TH2F("histDElecS", "dx/dy of electrons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDElecC = ROOT.TH2F("histDElecC", "dx/dy of electrons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDElecB = ROOT.TH2F("histDElecB", "dx/dy of electrons in B jet", 1000, -10, 10, 1000, -10, 10)
+histDCKaonL = ROOT.TH2F("histDCKaonL", "dx/dy of charged kaons in L jet", 100, -10, 10, 100, -10, 10)
+histDCKaonS = ROOT.TH2F("histDCKaonS", "dx/dy of charged kaons in S jet", 100, -10, 10, 100, -10, 10)
+histDCKaonC = ROOT.TH2F("histDCKaonC", "dx/dy of charged kaons in C jet", 100, -10, 10, 100, -10, 10)
+histDCKaonB = ROOT.TH2F("histDCKaonB", "dx/dy of charged kaons in B jet", 100, -10, 10, 100, -10, 10)
+
+histDNKaonL = ROOT.TH2F("histDNKaonL", "dx/dy of neutral kaons in L jet", 100, -10, 10, 100, -10, 10)
+histDNKaonS = ROOT.TH2F("histDNKaonS", "dx/dy of neutral kaons in S jet", 100, -10, 10, 100, -10, 10)
+histDNKaonC = ROOT.TH2F("histDNKaonC", "dx/dy of neutral kaons in C jet", 100, -10, 10, 100, -10, 10)
+histDNKaonB = ROOT.TH2F("histDNKaonB", "dx/dy of neutral kaons in B jet", 100, -10, 10, 100, -10, 10)
 
 
-histDMuonL = ROOT.TH2F("histDMuonL", "dx/dy of muons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDMuonS = ROOT.TH2F("histDMuonS", "dx/dy of muons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDMuonC = ROOT.TH2F("histDMuonC", "dx/dy of muons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDMuonB = ROOT.TH2F("histDMuonB", "dx/dy of muons in B jet", 1000, -10, 10, 1000, -10, 10)
+histDCPionL = ROOT.TH2F("histDCPionL", "dx/dy of charged pions in L jet", 100, -10, 10, 100, -10, 10)
+histDCPionS = ROOT.TH2F("histDCPionS", "dx/dy of charged pions in S jet", 100, -10, 10, 100, -10, 10)
+histDCPionC = ROOT.TH2F("histDCPionC", "dx/dy of charged pions in C jet", 100, -10, 10, 100, -10, 10)
+histDCPionB = ROOT.TH2F("histDCPionB", "dx/dy of charged pions in B jet", 100, -10, 10, 100, -10, 10)
+
+histDNPionL = ROOT.TH2F("histDNPionL", "dx/dy of neutral pions in L jet", 100, -10, 10, 100, -10, 10)
+histDNPionS = ROOT.TH2F("histDNPionS", "dx/dy of neutral pions in S jet", 100, -10, 10, 100, -10, 10)
+histDNPionC = ROOT.TH2F("histDNPionC", "dx/dy of neutral pions in C jet", 100, -10, 10, 100, -10, 10)
+histDNPionB = ROOT.TH2F("histDNPionB", "dx/dy of neutral pions in B jet", 100, -10, 10, 100, -10, 10)
 
 
-histDProtL = ROOT.TH2F("histDProtL", "dx/dy of protons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDProtS = ROOT.TH2F("histDProtS", "dx/dy of protons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDProtC = ROOT.TH2F("histDProtC", "dx/dy of protons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDProtB = ROOT.TH2F("histDProtB", "dx/dy of protons in B jet", 1000, -10, 10, 1000, -10, 10)
+histDElecL = ROOT.TH2F("histDElecL", "dx/dy of electrons in L jet", 100, -10, 10, 100, -10, 10)
+histDElecS = ROOT.TH2F("histDElecS", "dx/dy of electrons in S jet", 100, -10, 10, 100, -10, 10)
+histDElecC = ROOT.TH2F("histDElecC", "dx/dy of electrons in C jet", 100, -10, 10, 100, -10, 10)
+histDElecB = ROOT.TH2F("histDElecB", "dx/dy of electrons in B jet", 100, -10, 10, 100, -10, 10)
 
 
-histDNeutL = ROOT.TH2F("histDNeutL", "dx/dy of neutrons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDNeutS = ROOT.TH2F("histDNeutS", "dx/dy of neutrons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDNeutC = ROOT.TH2F("histDNeutC", "dx/dy of neutrons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDNeutB = ROOT.TH2F("histDNeutB", "dx/dy of neutrons in B jet", 1000, -10, 10, 1000, -10, 10)
+histDMuonL = ROOT.TH2F("histDMuonL", "dx/dy of muons in L jet", 100, -10, 10, 100, -10, 10)
+histDMuonS = ROOT.TH2F("histDMuonS", "dx/dy of muons in S jet", 100, -10, 10, 100, -10, 10)
+histDMuonC = ROOT.TH2F("histDMuonC", "dx/dy of muons in C jet", 100, -10, 10, 100, -10, 10)
+histDMuonB = ROOT.TH2F("histDMuonB", "dx/dy of muons in B jet", 100, -10, 10, 100, -10, 10)
 
-histDPhotL = ROOT.TH2F("histDPhotL", "dx/dy of photons in L jet", 1000, -10, 10, 1000, -10, 10)
-histDPhotS = ROOT.TH2F("histDPhotS", "dx/dy of photons in S jet", 1000, -10, 10, 1000, -10, 10)
-histDPhotC = ROOT.TH2F("histDPhotC", "dx/dy of photons in C jet", 1000, -10, 10, 1000, -10, 10)
-histDPhotB = ROOT.TH2F("histDPhotB", "dx/dy of photons in B jet", 1000, -10, 10, 1000, -10, 10)
 
-histCloseNeutL = ROOT.TH2F("histCloseNeutL", "Angle\pseudoRap of closest neutrons L jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCloseNeutS = ROOT.TH2F("histCloseNeutS", "Angle\pseudoRap of closest neutrons S jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCloseNeutC = ROOT.TH2F("histCloseNeutC", "Angle\pseudoRap of closest neutrons C jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
-histCloseNeutB = ROOT.TH2F("histCloseNeutB", "Angle\pseudoRap of closest neutrons B jet", 1000, -0.6, 0.6, 1000, -0.6, 0.6)
+histDProtL = ROOT.TH2F("histDProtL", "dx/dy of protons in L jet", 100, -10, 10, 100, -10, 10)
+histDProtS = ROOT.TH2F("histDProtS", "dx/dy of protons in S jet", 100, -10, 10, 100, -10, 10)
+histDProtC = ROOT.TH2F("histDProtC", "dx/dy of protons in C jet", 100, -10, 10, 100, -10, 10)
+histDProtB = ROOT.TH2F("histDProtB", "dx/dy of protons in B jet", 100, -10, 10, 100, -10, 10)
+
+
+histDNeutL = ROOT.TH2F("histDNeutL", "dx/dy of neutrons in L jet", 100, -10, 10, 100, -10, 10)
+histDNeutS = ROOT.TH2F("histDNeutS", "dx/dy of neutrons in S jet", 100, -10, 10, 100, -10, 10)
+histDNeutC = ROOT.TH2F("histDNeutC", "dx/dy of neutrons in C jet", 100, -10, 10, 100, -10, 10)
+histDNeutB = ROOT.TH2F("histDNeutB", "dx/dy of neutrons in B jet", 100, -10, 10, 100, -10, 10)
+
+histDPhotL = ROOT.TH2F("histDPhotL", "dx/dy of photons in L jet", 100, -10, 10, 100, -10, 10)
+histDPhotS = ROOT.TH2F("histDPhotS", "dx/dy of photons in S jet", 100, -10, 10, 100, -10, 10)
+histDPhotC = ROOT.TH2F("histDPhotC", "dx/dy of photons in C jet", 100, -10, 10, 100, -10, 10)
+histDPhotB = ROOT.TH2F("histDPhotB", "dx/dy of photons in B jet", 100, -10, 10, 100, -10, 10)
+
+histCloseNeutL = ROOT.TH2F("histCloseNeutL", "Angle\pseudoRap of closest neutrons L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCloseNeutS = ROOT.TH2F("histCloseNeutS", "Angle\pseudoRap of closest neutrons S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCloseNeutC = ROOT.TH2F("histCloseNeutC", "Angle\pseudoRap of closest neutrons C jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histCloseNeutB = ROOT.TH2F("histCloseNeutB", "Angle\pseudoRap of closest neutrons B jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 NL = 0
 NS = 0
@@ -292,7 +292,13 @@ for entry in range(0, numberOfEntries):
  if q.PID == 5:
   NB += 1
   histNJetB.Fill(NJet)
-  
+ 
+ # Skip if you don't have two good jet in the event
+ if NJet < 2:
+  continue
+
+
+ 
  CKaonL = [0, 0, 0]
  CKaonS = [0, 0, 0]
  CKaonC = [0, 0, 0]
