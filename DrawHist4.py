@@ -143,3 +143,15 @@ Cosmetic(histRatCPionPhot,'Ratio of charged pions and photons','',False,False,Fa
 
 histRatNPionElec = [file.Get('histRatNPionElecL')]+[file.Get('histRatNPionElecS')]
 Cosmetic(histRatNPionElec,'Ratio of neutral pions and electrons/positrons','',False,False,False,False,'histRatNPionElec_'+sys.argv[1][:-5]+'.png')
+
+
+histRatCPionMuon = [file.Get('histRatCPionMuonL')]+[file.Get('histRatCPionMuonS')]
+Cosmetic(histRatCPionMuon,'Ratio of charged pions and muons','',False,False,False,False,'histRatCPionMuon_'+sys.argv[1][:-5]+'.png')
+
+
+histRatCKaonMuon = [file.Get('histRatCKaonMuonL')]+[file.Get('histRatCKaonMuonS')]
+Cosmetic(histRatCKaonMuon,'Ratio of charged kaons and muons','',False,False,False,False,'histRatCKaonMuon_'+sys.argv[1][:-5]+'.png')
+
+
+histRatNKaonCPion = [file.Get('histRatNKaonCPionL')]+[file.Get('histRatNKaonCPionS')]
+Cosmetic(histRatNKaonCPion,'Ratio of neutral kaons and charged pions','',False,False,False,False,'histRatNKaonCPion_'+sys.argv[1][:-5]+'.png')

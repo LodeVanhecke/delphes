@@ -97,11 +97,20 @@ histJetPhotL = ROOT.TH2F("histJetPhotL", "photons in L jet", 100, -0.6, 0.6, 100
 histJetPhotS = ROOT.TH2F("histJetPhotS", "photons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
 
 
-histRatCPionPhotL = ROOT.TH1F("histRatCPionPhotL", "Ratio of charged pions and photons in L jet", 40, 0, 10)
-histRatCPionPhotS = ROOT.TH1F("histRatCPionPhotS", "Ratio of charged pions and photons in S jet", 40, 0, 10)
+histRatCPionPhotL = ROOT.TH1F("histRatCPionPhotL", "Ratio of charged pions and photons in L jet", 20, 0, 10)
+histRatCPionPhotS = ROOT.TH1F("histRatCPionPhotS", "Ratio of charged pions and photons in S jet", 20, 0, 10)
 
-histRatNPionElecL = ROOT.TH1F("histRatNPionElecL", "Ratio of neutral pions and electrons/positrons in L jet", 40, 0, 10)
-histRatNPionElecS = ROOT.TH1F("histRatNPionElecS", "Ratio of neutral pions and electrons/positrons in S jet", 40, 0, 10)
+histRatNPionElecL = ROOT.TH1F("histRatNPionElecL", "Ratio of neutral pions and electrons/positrons in L jet", 20, 0, 10)
+histRatNPionElecS = ROOT.TH1F("histRatNPionElecS", "Ratio of neutral pions and electrons/positrons in S jet", 20, 0, 10)
+
+histRatCPionMuonL = ROOT.TH1F("histRatCPionMuonL", "Ratio of charged pions and muons in L jet", 20, 0, 10)
+histRatCPionMuonS = ROOT.TH1F("histRatCPionMuonS", "Ratio of charged pions and muons in S jet", 20, 0, 10)
+
+histRatCKaonMuonL = ROOT.TH1F("histRatCKaonMuonL", "Ratio of charged kaons and muons in L jet", 20, 0, 10)
+histRatCKaonMuonS = ROOT.TH1F("histRatCKaonMuonS", "Ratio of charged kaons and muons in S jet", 20, 0, 10)
+
+histRatNKaonCPionL = ROOT.TH1F("histRatNKaonCPionL", "Ratio of neutral kaons and charged pions in L jet", 20, 0, 10)
+histRatNKaonCPionS = ROOT.TH1F("histRatNKaonCPionS", "Ratio of neutral kaons and charged pions in S jet", 20, 0, 10)
 
 
 NL = 0
@@ -535,6 +544,12 @@ for entry in range(0, numberOfEntries):
    histRatCPionPhotL.Fill(NCPionqbar/NPhotqbar)
    histRatNPionElecL.Fill(NNPionq/NElecq)
    histRatNPionElecL.Fill(NNPionqbar/NElecqbar)
+   histRatCPionMuonL.Fill(NCPionq/NMuonq)
+   histRatCPionMuonL.Fill(NCPionqbar/NMuonqbar)
+   histRatCKaonMuonL.Fill(NCKaonq/NMuonq)
+   histRatCKaonMuonL.Fill(NCKaonqbar/NMuonqbar)
+   histRatNKaonCPionL.Fill(NNKaonq/NCPionq)
+   histRatNKaonCPionL.Fill(NNKaonqbar/NCPionqbar)
   except:
    pass
  if q.PID == 3:
@@ -543,6 +558,12 @@ for entry in range(0, numberOfEntries):
    histRatCPionPhotS.Fill(NCPionqbar/NPhotqbar)
    histRatNPionElecS.Fill(NNPionq/NElecq)
    histRatNPionElecS.Fill(NNPionqbar/NElecqbar)
+   histRatCPionMuonS.Fill(NCPionq/NMuonq)
+   histRatCPionMuonS.Fill(NCPionqbar/NMuonqbar)
+   histRatCKaonMuonS.Fill(NCKaonq/NMuonq)
+   histRatCKaonMuonS.Fill(NCKaonqbar/NMuonqbar)
+   histRatNKaonCPionS.Fill(NNKaonq/NCPionq)
+   histRatNKaonCPionS.Fill(NNKaonqbar/NCPionqbar)
   except:
    pass
 
@@ -616,9 +637,18 @@ histCloseNeutS *= 1/NS
 histRatCPionPhotL *= 1/NL
 histRatCPionPhotS *= 1/NS
 
-
 histRatNPionElecL *= 1/NL
 histRatNPionElecS *= 1/NS
 
+histRatCPionMuonL *= 1/NL
+histRatCPionMuonS *= 1/NS
+
+histRatCKaonMuonL *= 1/NL
+histRatCKaonMuonS *= 1/NS
+
+histRatNKaonCPionL *= 1/NL
+histRatNKaonCPionS *= 1/NS
+
 
 file.Write()
+
