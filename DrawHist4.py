@@ -19,7 +19,7 @@ def Cosmetic(hist,xtitle,ytitle,error,norm,logx,logy,filename):
      if norm == True:
       hist[i].DrawNormalized('same')
      else:
-      hist[i].Draw('same')
+      hist[i].Draw('same hist')
     if logx == True:
      c.SetLogx()
     if logy == True:
@@ -29,7 +29,7 @@ def Cosmetic(hist,xtitle,ytitle,error,norm,logx,logy,filename):
 
 def Cosmetic2(hist,xtitle,ytitle,error,norm,logx,logy,filename):
   c = ROOT.TCanvas()
-  c.Divide(2,2,0.01,0.01)
+  c.Divide(2,1,0.01,0.01)
   ROOT.gStyle.SetOptStat(0)
   for i in range(len(hist)):
     hist[i].GetXaxis().SetTitle(xtitle)
@@ -70,17 +70,13 @@ def Cosmetic3(hist,xtitle,ytitle,error,norm,logx,logy,filename):
     hist[i].SetTitle("")
     if error == True:
      if norm == True:
-      c.cd(i+1)
       hist[i].DrawNormalized('e same box')
      else:
-      c.cd(i+1)
       hist[i].Draw('e same box')
     else:
      if norm == True:
-      c.cd(i+1)
       hist[i].DrawNormalized('same box')
      else:
-      c.cd(i+1)
       hist[i].Draw('same box')
     if logx == True:
      c.SetLogx()
@@ -94,44 +90,43 @@ def Cosmetic3(hist,xtitle,ytitle,error,norm,logx,logy,filename):
 file = ROOT.TFile(sys.argv[1],"READ")
 
 
-histMaxCKaon = [file.Get('histMaxCKaonL')]+[file.Get('histMaxCKaonS')]+[file.Get('histMaxCKaonC')]+[file.Get('histMaxCKaonB')]
+histMaxCKaon = [file.Get('histMaxCKaonL')]+[file.Get('histMaxCKaonS')]
 Cosmetic2(histMaxCKaon,'DeltaPhi of max charged kaons in jet','DeltaTheta of max charged kaons in jet',False,False,False,False,'histMaxCKaon_'+sys.argv[1][:-5]+'.png')
 
-histMaxNKaon = [file.Get('histMaxNKaonL')]+[file.Get('histMaxNKaonS')]+[file.Get('histMaxNKaonC')]+[file.Get('histMaxNKaonB')]
+histMaxNKaon = [file.Get('histMaxNKaonL')]+[file.Get('histMaxNKaonS')]
 Cosmetic2(histMaxNKaon,'DeltaPhi of max neutral kaons in jet','DeltaTheta of max neutral kaons in jet',False,False,False,False,'histMaxNKaon_'+sys.argv[1][:-5]+'.png')
 
 
-histMaxCPion = [file.Get('histMaxCPionL')]+[file.Get('histMaxCPionS')]+[file.Get('histMaxCPionC')]+[file.Get('histMaxCPionB')]
+histMaxCPion = [file.Get('histMaxCPionL')]+[file.Get('histMaxCPionS')]
 Cosmetic2(histMaxCPion,'DeltaPhi of max charged pions in jet','DeltaTheta of max charged pions in jet',False,False,False,False,'histMaxCPion_'+sys.argv[1][:-5]+'.png')
 
-histMaxNPion = [file.Get('histMaxNPionL')]+[file.Get('histMaxNPionS')]+[file.Get('histMaxNPionC')]+[file.Get('histMaxNPionB')]
+histMaxNPion = [file.Get('histMaxNPionL')]+[file.Get('histMaxNPionS')]
 Cosmetic2(histMaxNPion,'DeltaPhi of max neutral pions in jet','DeltaTheta of max neutral pions in jet',False,False,False,False,'histMaxNPion_'+sys.argv[1][:-5]+'.png')
 
 
-histMaxElec = [file.Get('histMaxElecL')]+[file.Get('histMaxElecS')]+[file.Get('histMaxElecC')]+[file.Get('histMaxElecB')]
+histMaxElec = [file.Get('histMaxElecL')]+[file.Get('histMaxElecS')]
 Cosmetic2(histMaxElec,'DeltaPhi of max electrons/positrons in jet','DeltaTheta of max electrons/positrons in jet',False,False,False,False,'histMaxElec_'+sys.argv[1][:-5]+'.png')
 
 
-histMaxMuon = [file.Get('histMaxMuonL')]+[file.Get('histMaxMuonS')]+[file.Get('histMaxMuonC')]+[file.Get('histMaxMuonB')]
+histMaxMuon = [file.Get('histMaxMuonL')]+[file.Get('histMaxMuonS')]
 Cosmetic2(histMaxMuon,'DeltaPhi of max muons (pos and neg) in jet','DeltaTheta of max muons (pos and neg) in jet',False,False,False,False,'histMaxMuon_'+sys.argv[1][:-5]+'.png')
 
 
-histMaxProt = [file.Get('histMaxProtL')]+[file.Get('histMaxProtS')]+[file.Get('histMaxProtC')]+[file.Get('histMaxProtB')]
+histMaxProt = [file.Get('histMaxProtL')]+[file.Get('histMaxProtS')]
 Cosmetic2(histMaxProt,'DeltaPhi of max protons in jet','DeltaTheta of max protons in jet',False,False,False,False,'histMaxProt_'+sys.argv[1][:-5]+'.png')
 
 
-histMaxNeut = [file.Get('histMaxNeutL')]+[file.Get('histMaxNeutS')]+[file.Get('histMaxNeutC')]+[file.Get('histMaxNeutB')]
+histMaxNeut = [file.Get('histMaxNeutL')]+[file.Get('histMaxNeutS')]
 Cosmetic2(histMaxNeut,'DeltaPhi of max neutrons in jet','DeltaTheta of max neutrons in jet',False,False,False,False,'histMaxNeut_'+sys.argv[1][:-5]+'.png')
 
 
-histMaxPhot = [file.Get('histMaxPhotL')]+[file.Get('histMaxPhotS')]+[file.Get('histMaxPhotC')]+[file.Get('histMaxPhotB')]
+histMaxPhot = [file.Get('histMaxPhotL')]+[file.Get('histMaxPhotS')]
 Cosmetic2(histMaxPhot,'DeltaPhi of max photons in jet','DeltaTheta of max photons in jet',False,False,False,False,'histMaxPhot_'+sys.argv[1][:-5]+'.png')
 
 
 
-histCloseNeut = [file.Get('histCloseNeutL')]+[file.Get('histCloseNeutS')]+[file.Get('histCloseNeutC')]+[file.Get('histCloseNeutB')]
+histCloseNeut = [file.Get('histCloseNeutL')]+[file.Get('histCloseNeutS')]
 Cosmetic2(histCloseNeut,'DeltaPhi of closest neutrons in jet','DeltaTheta of closest neutrons in jet',False,False,False,False,'histCloseNeut_'+sys.argv[1][:-5]+'.png')
-
 
 
 
@@ -141,12 +136,10 @@ Cosmetic3(histJetL,'DeltaPhi of particles in jet','DeltaTheta of particles in je
 histJetS = [file.Get('histJetCKaonS')]+[file.Get('histJetNKaonS')]+[file.Get('histJetCPionS')]+[file.Get('histJetNPionS')]+[file.Get('histJetElecS')]+[file.Get('histJetMuonS')]+[file.Get('histJetProtS')]+[file.Get('histJetNeutS')]+[file.Get('histJetPhotS')]
 Cosmetic3(histJetS,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetS_'+sys.argv[1][:-5]+'.png')
 
-histJetC = [file.Get('histJetCKaonC')]+[file.Get('histJetNKaonC')]+[file.Get('histJetCPionC')]+[file.Get('histJetNPionC')]+[file.Get('histJetElecC')]+[file.Get('histJetMuonC')]+[file.Get('histJetProtC')]+[file.Get('histJetNeutC')]+[file.Get('histJetPhotC')]
-Cosmetic3(histJetC,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetC_'+sys.argv[1][:-5]+'.png')
 
-histJetB = [file.Get('histJetCKaonB')]+[file.Get('histJetNKaonB')]+[file.Get('histJetCPionB')]+[file.Get('histJetNPionB')]+[file.Get('histJetElecB')]+[file.Get('histJetMuonB')]+[file.Get('histJetProtB')]+[file.Get('histJetNeutB')]+[file.Get('histJetPhotB')]
-Cosmetic3(histJetB,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetB_'+sys.argv[1][:-5]+'.png')
-
-
-histRatCPionPhot = [file.Get('histRatCPionPhotL')]+[file.Get('histRatCPionPhotS')]+[file.Get('histRatCPionPhotC')]+[file.Get('histRatCPionPhotB')]
+histRatCPionPhot = [file.Get('histRatCPionPhotL')]+[file.Get('histRatCPionPhotS')]
 Cosmetic(histRatCPionPhot,'Ratio of charged pions and photons','',False,False,False,False,'histRatCPionPhot_'+sys.argv[1][:-5]+'.png')
+
+
+histRatNPionElec = [file.Get('histRatNPionElecL')]+[file.Get('histRatNPionElecS')]
+Cosmetic(histRatNPionElec,'Ratio of neutral pions and electrons/positrons','',False,False,False,False,'histRatNPionElec_'+sys.argv[1][:-5]+'.png')
