@@ -544,161 +544,161 @@ for entry in range(0, numberOfEntries):
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CKaonL[2]: CKaonL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CKaonL[2]: CKaonL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CKaonS[2]: CKaonS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CKaonS[2]: CKaonS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CKaonC[2]: CKaonC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CKaonC[2]: CKaonC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CKaonB[2]: CKaonB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CKaonB[2]: CKaonB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if abs(particle2.PID) == 311:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NKaonL[2]: NKaonL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NKaonL[2]: NKaonL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NKaonS[2]: NKaonS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NKaonS[2]: NKaonS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NKaonC[2]: NKaonC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NKaonC[2]: NKaonC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NKaonB[2]: NKaonB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NKaonB[2]: NKaonB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if abs(particle2.PID) == 211:
       NCPionqbar = 0
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CPionL[2]: CPionL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CPionL[2]: CPionL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CPionS[2]: CPionS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CPionS[2]: CPionS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CPionC[2]: CPionC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CPionC[2]: CPionC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > CPionB[2]: CPionB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > CPionB[2]: CPionB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if abs(particle2.PID) == 111:
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NPionL[2]: NPionL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NPionL[2]: NPionL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NPionS[2]: NPionS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NPionS[2]: NPionS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NPionC[2]: NPionC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NPionC[2]: NPionC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       if particle2.PT > NPionB[2]: NPionB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       if particle2.PT > NPionB[2]: NPionB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if abs(particle2.PID) == 11:
       if q.PID == 1 or q.PID == 2:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ElecL[2]: ElecL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ElecL[2]: ElecL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ElecS[2]: ElecS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ElecS[2]: ElecS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ElecC[2]: ElecC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ElecC[2]: ElecC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ElecB[2]: ElecB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ElecB[2]: ElecB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if abs(particle2.PID) == 13:
       if q.PID == 1 or q.PID == 2:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > MuonL[2]: MuonL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > MuonL[2]: MuonL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > MuonS[2]: MuonS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > MuonS[2]: MuonS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > MuonC[2]: MuonC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > MuonC[2]: MuonC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > MuonB[2]: MuonB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > MuonB[2]: MuonB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if particle2.PID == 2212:
       if q.PID == 1 or q.PID == 2:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ProtL[2]: ProtL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ProtL[2]: ProtL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ProtS[2]: ProtS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ProtS[2]: ProtS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ProtC[2]: ProtC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ProtC[2]: ProtC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > ProtB[2]: ProtB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > ProtB[2]: ProtB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if particle2.PID == 2112:
       if q.PID == 1 or q.PID == 2:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > NeutL[2]: NeutL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
-       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutL[0]: CloseNeutL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > NeutL[2]: NeutL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
+       if abs(p1.DeltaPhi(Jetqbarlv)) < CloseNeutL[0]: CloseNeutL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > NeutS[2]: NeutS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
-       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutS[0]: CloseNeutS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > NeutS[2]: NeutS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
+       if abs(p1.DeltaPhi(Jetqbarlv)) < CloseNeutS[0]: CloseNeutS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > NeutC[2]: NeutC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
-       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutC[0]: CloseNeutC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > NeutC[2]: NeutC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
+       if abs(p1.DeltaPhi(Jetqbarlv)) < CloseNeutC[0]: CloseNeutC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > NeutB[2]: NeutB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
-       if abs(p1.DeltaPhi(Jetqlv)) < CloseNeutB[0]: CloseNeutB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > NeutB[2]: NeutB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
+       if abs(p1.DeltaPhi(Jetqbarlv)) < CloseNeutB[0]: CloseNeutB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      if particle2.PID == 22:
       NPhotqbar = 0
       if q.PID == 1 or q.PID == 2:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > PhotL[2]: PhotL = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > PhotL[2]: PhotL = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 3:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > PhotS[2]: PhotS = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > PhotS[2]: PhotS = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 4:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > PhotC[2]: PhotC = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > PhotC[2]: PhotC = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
       if q.PID == 5:
-       PT = abs(particle2.PT)/Jetq.PT
-       DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       if particle2.PT > PhotB[2]: PhotB = [p1.DeltaPhi(Jetqlv),DeltaTheta,PT]
+       PT = abs(particle2.PT)/Jetqbar.PT
+       DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
+       if particle2.PT > PhotB[2]: PhotB = [p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT]
      else:
       continue
     else:

@@ -12,12 +12,12 @@ def Cosmetic(hist,xtitle,ytitle,error,norm,logx,logy,filename):
     hist[i].SetTitle("")
     if error == True:
      if norm == True:
-      hist[i].DrawNormalized('same e')
+      hist[i].DrawNormalized('same e hist')
      else:
-      hist[i].Draw('same e')
+      hist[i].Draw('same e hist')
     else:
      if norm == True:
-      hist[i].DrawNormalized('same')
+      hist[i].DrawNormalized('same hist')
      else:
       hist[i].Draw('same hist')
     if logx == True:
@@ -129,7 +129,6 @@ histCloseNeut = [file.Get('histCloseNeutL')]+[file.Get('histCloseNeutS')]
 Cosmetic2(histCloseNeut,'DeltaPhi of closest neutrons in jet','DeltaTheta of closest neutrons in jet',False,False,False,False,'histCloseNeut_'+sys.argv[1][:-5]+'.png')
 
 
-
 histJetL = [file.Get('histJetCKaonL')]+[file.Get('histJetNKaonL')]+[file.Get('histJetCPionL')]+[file.Get('histJetNPionL')]+[file.Get('histJetElecL')]+[file.Get('histJetMuonL')]+[file.Get('histJetProtL')]+[file.Get('histJetNeutL')]+[file.Get('histJetPhotL')]
 Cosmetic3(histJetL,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetL_'+sys.argv[1][:-5]+'.png')
 
@@ -138,20 +137,25 @@ Cosmetic3(histJetS,'DeltaPhi of particles in jet','DeltaTheta of particles in je
 
 
 histRatCPionPhot = [file.Get('histRatCPionPhotL')]+[file.Get('histRatCPionPhotS')]
-Cosmetic(histRatCPionPhot,'Ratio of charged pions and photons','',False,False,False,False,'histRatCPionPhot_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histRatCPionPhot,'Ratio of charged pions and photons','',False,True,False,False,'histRatCPionPhot_'+sys.argv[1][:-5]+'.png')
+
+
+histRatNPionPhot = [file.Get('histRatNPionPhotL')]+[file.Get('histRatNPionPhotS')]
+Cosmetic(histRatNPionPhot,'Ratio of neutral pions and photons','',False,True,False,False,'histRatNPionPhot_'+sys.argv[1][:-5]+'.png')
 
 
 histRatNPionElec = [file.Get('histRatNPionElecL')]+[file.Get('histRatNPionElecS')]
-Cosmetic(histRatNPionElec,'Ratio of neutral pions and electrons/positrons','',False,False,False,False,'histRatNPionElec_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histRatNPionElec,'Ratio of neutral pions and electrons/positrons','',False,True,False,False,'histRatNPionElec_'+sys.argv[1][:-5]+'.png')
 
 
 histRatCPionMuon = [file.Get('histRatCPionMuonL')]+[file.Get('histRatCPionMuonS')]
-Cosmetic(histRatCPionMuon,'Ratio of charged pions and muons','',False,False,False,False,'histRatCPionMuon_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histRatCPionMuon,'Ratio of charged pions and muons','',False,True,False,False,'histRatCPionMuon_'+sys.argv[1][:-5]+'.png')
 
 
 histRatCKaonMuon = [file.Get('histRatCKaonMuonL')]+[file.Get('histRatCKaonMuonS')]
-Cosmetic(histRatCKaonMuon,'Ratio of charged kaons and muons','',False,False,False,False,'histRatCKaonMuon_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histRatCKaonMuon,'Ratio of charged kaons and muons','',False,True,False,False,'histRatCKaonMuon_'+sys.argv[1][:-5]+'.png')
 
 
 histRatNKaonCPion = [file.Get('histRatNKaonCPionL')]+[file.Get('histRatNKaonCPionS')]
-Cosmetic(histRatNKaonCPion,'Ratio of neutral kaons and charged pions','',False,False,False,False,'histRatNKaonCPion_'+sys.argv[1][:-5]+'.png')
+Cosmetic(histRatNKaonCPion,'Ratio of neutral kaons and charged pions','',False,True,False,False,'histRatNKaonCPion_'+sys.argv[1][:-5]+'.png')
+
