@@ -69,32 +69,32 @@ histCloseNeutL = ROOT.TH2F("histCloseNeutL", "Angle\pseudoRap of closest neutron
 histCloseNeutS = ROOT.TH2F("histCloseNeutS", "Angle\pseudoRap of closest neutrons S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
 
-histJetCKaonL = ROOT.TH2F("histJetCKaonL", "charged kaons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetCKaonS = ROOT.TH2F("histJetCKaonS", "charged kaons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetCKaonL = ROOT.TH2F("histJetCKaonL", "charged kaons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetCKaonS = ROOT.TH2F("histJetCKaonS", "charged kaons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetNKaonL = ROOT.TH2F("histJetNKaonL", "neutral kaons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetNKaonS = ROOT.TH2F("histJetNKaonS", "neutral kaons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetNKaonL = ROOT.TH2F("histJetNKaonL", "neutral kaons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetNKaonS = ROOT.TH2F("histJetNKaonS", "neutral kaons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetCPionL = ROOT.TH2F("histJetCPionL", "charged pions in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetCPionS = ROOT.TH2F("histJetCPionS", "charged pions in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetCPionL = ROOT.TH2F("histJetCPionL", "charged pions in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetCPionS = ROOT.TH2F("histJetCPionS", "charged pions in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetNPionL = ROOT.TH2F("histJetNPionL", "neutral pions in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetNPionS = ROOT.TH2F("histJetNPionS", "neutral pions in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetNPionL = ROOT.TH2F("histJetNPionL", "neutral pions in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetNPionS = ROOT.TH2F("histJetNPionS", "neutral pions in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetElecL = ROOT.TH2F("histJetElecL", "electrons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetElecS = ROOT.TH2F("histJetElecS", "electrons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetElecL = ROOT.TH2F("histJetElecL", "electrons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetElecS = ROOT.TH2F("histJetElecS", "electrons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetMuonL = ROOT.TH2F("histJetMuonL", "muons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetMuonS = ROOT.TH2F("histJetMuonS", "muons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetMuonL = ROOT.TH2F("histJetMuonL", "muons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetMuonS = ROOT.TH2F("histJetMuonS", "muons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetProtL = ROOT.TH2F("histJetProtL", "protons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetProtS = ROOT.TH2F("histJetProtS", "protons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetProtL = ROOT.TH2F("histJetProtL", "protons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetProtS = ROOT.TH2F("histJetProtS", "protons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetNeutL = ROOT.TH2F("histJetNeutL", "neutrons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetNeutS = ROOT.TH2F("histJetNeutS", "neutrons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetNeutL = ROOT.TH2F("histJetNeutL", "neutrons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetNeutS = ROOT.TH2F("histJetNeutS", "neutrons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
-histJetPhotL = ROOT.TH2F("histJetPhotL", "photons in L jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
-histJetPhotS = ROOT.TH2F("histJetPhotS", "photons in S jet", 100, -0.6, 0.6, 100, -0.6, 0.6)
+histJetPhotL = ROOT.TH2F("histJetPhotL", "photons in L jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
+histJetPhotS = ROOT.TH2F("histJetPhotS", "photons in S jet", 500, -0.6, 0.6, 500, -0.6, 0.6)
 
 
 histRatCPionPhotL = ROOT.TH1F("histRatCPionPhotL", "Ratio of charged pions and photons in L jet", 10, 0, 10)
@@ -114,7 +114,6 @@ histRatCKaonMuonS = ROOT.TH1F("histRatCKaonMuonS", "Ratio of charged kaons and m
 
 histRatNKaonCPionL = ROOT.TH1F("histRatNKaonCPionL", "Ratio of neutral kaons and charged pions in L jet", 10, 0, 10)
 histRatNKaonCPionS = ROOT.TH1F("histRatNKaonCPionS", "Ratio of neutral kaons and charged pions in S jet", 10, 0, 10)
-
 
 
 
@@ -162,7 +161,7 @@ for entry in range(0, numberOfEntries):
  qbarlv.SetPtEtaPhiM(qbar.PT, qbar.Eta, qbar.Phi, qbar.Mass)
 
  Jetq = ROOT.Jet()
- Jetqbarlv = ROOT.TLorentzVector()
+ Jetqlv = ROOT.TLorentzVector()
  Jetqbar = ROOT.Jet()
  Jetqbarlv = ROOT.TLorentzVector()
  nPosq = -1
@@ -322,7 +321,7 @@ for entry in range(0, numberOfEntries):
   p1 = ROOT.TLorentzVector()
   particle2 = branchParticle.At(i)
   p1.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
-  if particle2.PT > 1:
+  if particle2.PT > 5:
    if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
     if p1.DeltaR(Jetqlv) <= 0.5:
      if abs(particle2.PID) == 321:

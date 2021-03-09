@@ -65,10 +65,6 @@ histJetPhotL = ROOT.TH2F("histJetPhotL", "photons in L jet", 50, -0.6, 0.6, 50, 
 histJetPhotS = ROOT.TH2F("histJetPhotS", "photons in S jet", 50, -0.6, 0.6, 50, -0.6, 0.6)
 
 
-histRatCKaonMuonL = ROOT.TH1F("histRatCKaonMuonL", "Ratio of charged kaons and muons in L jet", 10, 0, 10)
-histRatCKaonMuonS = ROOT.TH1F("histRatCKaonMuonS", "Ratio of charged kaons and muons in S jet", 10, 0, 10)
-
-
 NL = 0
 NS = 0
 NC = 0
@@ -199,11 +195,13 @@ for entry in range(0, numberOfEntries):
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       histJetCKaonL.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
+       if particle2.D1 > -1:
+        if abs(branchParticle.At(particle2.D1).PID) == 13: histJetCKaonL.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       histJetCKaonS.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
+       if particle2.D1 > -1:
+        if abs(branchParticle.At(particle2.D1).PID) == 13: histJetCKaonS.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
      if abs(particle2.PID) == 311:
       NNKaonq += 1
       if q.PID == 1 or q.PID == 2:
@@ -295,11 +293,13 @@ for entry in range(0, numberOfEntries):
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       histJetCKaonL.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
+       if particle2.D1 > -1:
+        if abs(branchParticle.At(particle2.D1).PID) == 13: histJetCKaonL.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       histJetCKaonS.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
+       if particle2.D1 > -1:
+        if abs(branchParticle.At(particle2.D1).PID) == 13: histJetCKaonS.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
      if abs(particle2.PID) == 311:
       NNKaonqbar += 1
       if q.PID == 1 or q.PID == 2:
@@ -388,25 +388,6 @@ for entry in range(0, numberOfEntries):
     continue
   else:
    continue
-
- if q.PID == 1 or q.PID == 2:
-  try:
-   histRatCKaonMuonL.Fill((NCKaonq/NMuonq)**-1)
-  except:
-   pass
-  try:
-   histRatCKaonMuonL.Fill((NCKaonqbar/NMuonqbar)**-1)
-  except:
-   pass
- if q.PID == 3:
-  try:
-   histRatCKaonMuonS.Fill((NCKaonq/NMuonq)**-1)
-  except:
-   pass
-  try:
-   histRatCKaonMuonS.Fill((NCKaonqbar/NMuonqbar)**-1)
-  except:
-   pass
 
 
  Q += [q.PID]

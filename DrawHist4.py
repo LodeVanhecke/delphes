@@ -130,10 +130,10 @@ Cosmetic2(histCloseNeut,'DeltaPhi of closest neutrons in jet','DeltaTheta of clo
 
 
 histJetL = [file.Get('histJetCKaonL')]+[file.Get('histJetNKaonL')]+[file.Get('histJetCPionL')]+[file.Get('histJetNPionL')]+[file.Get('histJetElecL')]+[file.Get('histJetMuonL')]+[file.Get('histJetProtL')]+[file.Get('histJetNeutL')]+[file.Get('histJetPhotL')]
-Cosmetic3(histJetL,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetL_'+sys.argv[1][:-5]+'.png')
+Cosmetic3(histJetL,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetL_'+sys.argv[1][:-5]+'.pdf')
 
 histJetS = [file.Get('histJetCKaonS')]+[file.Get('histJetNKaonS')]+[file.Get('histJetCPionS')]+[file.Get('histJetNPionS')]+[file.Get('histJetElecS')]+[file.Get('histJetMuonS')]+[file.Get('histJetProtS')]+[file.Get('histJetNeutS')]+[file.Get('histJetPhotS')]
-Cosmetic3(histJetS,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetS_'+sys.argv[1][:-5]+'.png')
+Cosmetic3(histJetS,'DeltaPhi of particles in jet','DeltaTheta of particles in jet',False,False,False,False,'histJetS_'+sys.argv[1][:-5]+'.pdf')
 
 
 histRatCPionPhot = [file.Get('histRatCPionPhotL')]+[file.Get('histRatCPionPhotS')]
