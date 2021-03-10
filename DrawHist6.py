@@ -117,7 +117,7 @@ Cosmetic3(histJetCPion,'DeltaPhi of charged pions from neutral kaon','DeltaTheta
 #Cosmetic3(histJetNeut,'DeltaPhi of neutrons in jet','DeltaTheta of neutrons in jet',False,False,False,False,'histJetNeut_'+sys.argv[1][:-5]+'.png')
 
 histJetPhot = [file.Get('histJetPhotL')]+[file.Get('histJetPhotS')]
-#Cosmetic3(histJetPhot,'DeltaPhi of photons in jet','DeltaTheta of photons in jet',False,False,False,False,'histJetPhot_'+sys.argv[1][:-5]+'.png')
+Cosmetic3(histJetPhot,'DeltaPhi of photons from neutral pion','DeltaTheta of photons from neutral pion',False,False,False,False,'histJetPhot_'+sys.argv[1][:-5]+'.png')
 
 
 #histJetL = [file.Get('histJetCKaonL')]+[file.Get('histJetNKaonL')]+[file.Get('histJetCPionL')]+[file.Get('histJetNPionL')]+[file.Get('histJetElecL')]+[file.Get('histJetMuonL')]+[file.Get('histJetProtL')]+[file.Get('histJetNeutL')]+[file.Get('histJetPhotL')]

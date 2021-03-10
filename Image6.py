@@ -78,13 +78,6 @@ NJetC = 0
 NJetB = 0
 
 
-Q = []
-
-
-NCPionq = 0
-NCPionqbar = 0
-
-
 # Loop over all events
 for entry in range(0, numberOfEntries):
  # Load selected branches with data from specified event
@@ -181,7 +174,6 @@ for entry in range(0, numberOfEntries):
      if particle2.PT > 1:
       if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
        if p1.DeltaR(Jetqlv) <= 0.5:
-         NCPionq += 1
          if q.PID == 1 or q.PID == 2:
           PT = abs(particle2.PT)/Jetq.PT
           DeltaTheta = p1.Theta()-p2.Theta()
@@ -194,7 +186,6 @@ for entry in range(0, numberOfEntries):
         continue
       if p1.DeltaR(Jetqlv) > p1.DeltaR(Jetqbarlv):
        if p1.DeltaR(Jetqbarlv) <= 0.5:
-         NCPionqbar += 1
          if q.PID == 1 or q.PID == 2:
           PT = abs(particle2.PT)/Jetqbar.PT
           DeltaTheta = p1.Theta()-p2.Theta()
@@ -213,17 +204,58 @@ for entry in range(0, numberOfEntries):
      continue
    else:
     continue
+  if abs(particle2.PID) == 111:
+   if particle2.D1 != -1:
+    if abs(branchParticle.At(particle2.D1).PID) == 22:
+     p1 = ROOT.TLorentzVector()
+     p2 = ROOT.TLorentzVector()
+     p2.SetPtEtaPhiM(branchParticle.At(particle2.D1).PT,branchParticle.At(particle2.D1).Eta,branchParticle.At(particle2.D1).Phi,branchParticle.At(particle2.D1).Mass)
+     p1.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
+     if particle2.PT > 1:
+      if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
+       if p1.DeltaR(Jetqlv) <= 0.5:
+         if q.PID == 1 or q.PID == 2:
+          PT = abs(particle2.PT)/Jetq.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetPhotL.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+         if q.PID == 3:
+          PT = abs(particle2.PT)/Jetq.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetPhotS.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+       else:
+        continue
+      if p1.DeltaR(Jetqlv) > p1.DeltaR(Jetqbarlv):
+       if p1.DeltaR(Jetqbarlv) <= 0.5:
+         if q.PID == 1 or q.PID == 2:
+          PT = abs(particle2.PT)/Jetqbar.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetPhotL.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+         if q.PID == 3:
+          PT = abs(particle2.PT)/Jetqbar.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetPhotS.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+       else:
+        continue
+      else:
+       continue
+     else:
+      continue
+    else:
+     continue
+   else:
+    continue
   else:
    continue
-
- Q += [q.PID]
 
 
 # Normalize hists
 
-print(NCPionq+NCPionqbar)
 
 histJetCPionL *= 1/NL
 histJetCPionS *= 1/NS
+
+histJetPhotL *= 1/NL
+histJetPhotS *= 1/NS
+
 
 file.Write()
