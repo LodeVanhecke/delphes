@@ -204,7 +204,7 @@ for entry in range(0, numberOfEntries):
        PT = abs(particle2.PT)/Jetq.PT
        DeltaTheta = Jetqlv.Theta()-p1.Theta()
        histJetCKaonS.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
-     if abs(particle2.PID) == 311:
+     if abs(particle2.PID) == 310 or abs(particle2.PID) == 130:
       NNKaonq += 1
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
@@ -236,6 +236,7 @@ for entry in range(0, numberOfEntries):
        histJetNPionS.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
      if abs(particle2.PID) == 11:
       NElecq += 1
+      print(particle2.Status)
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        DeltaTheta = Jetqlv.Theta()-p1.Theta()
@@ -300,7 +301,7 @@ for entry in range(0, numberOfEntries):
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
        histJetCKaonS.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
-     if abs(particle2.PID) == 311:
+     if abs(particle2.PID) == 310 or abs(particle2.PID) == 130:
       NNKaonqbar += 1
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT

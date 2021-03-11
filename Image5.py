@@ -165,6 +165,7 @@ for entry in range(0, numberOfEntries):
  for i in range(0,branchParticle.GetEntries()):
   particle2 = branchParticle.At(i)
   if abs(particle2.PID) == 310 or abs(particle2.PID) == 130:
+   print(particle2.Status)
    if particle2.D1 != -1:
     if abs(branchParticle.At(particle2.D1).PID) == 211:
      p1 = ROOT.TLorentzVector()
@@ -244,6 +245,46 @@ for entry in range(0, numberOfEntries):
      continue
    else:
     continue
+  if abs(particle2.PID) == 2112:
+   if particle2.D1 != -1:
+    if abs(branchParticle.At(particle2.D1).PID) == 2212:
+     p1 = ROOT.TLorentzVector()
+     p2 = ROOT.TLorentzVector()
+     p2.SetPtEtaPhiM(branchParticle.At(particle2.D1).PT,branchParticle.At(particle2.D1).Eta,branchParticle.At(particle2.D1).Phi,branchParticle.At(particle2.D1).Mass)
+     p1.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
+     if particle2.PT > 1:
+      if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
+       if p1.DeltaR(Jetqlv) <= 0.5:
+         if q.PID == 1 or q.PID == 2:
+          PT = abs(particle2.PT)/Jetq.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetProtL.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+         if q.PID == 3:
+          PT = abs(particle2.PT)/Jetq.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetProtS.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+       else:
+        continue
+      if p1.DeltaR(Jetqlv) > p1.DeltaR(Jetqbarlv):
+       if p1.DeltaR(Jetqbarlv) <= 0.5:
+         if q.PID == 1 or q.PID == 2:
+          PT = abs(particle2.PT)/Jetqbar.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetProtL.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+         if q.PID == 3:
+          PT = abs(particle2.PT)/Jetqbar.PT
+          DeltaTheta = p1.Theta()-p2.Theta()
+          histJetProtS.Fill(p1.DeltaPhi(p2),DeltaTheta,PT)
+       else:
+        continue
+      else:
+       continue
+     else:
+      continue
+    else:
+     continue
+   else:
+    continue
   else:
    continue
 
@@ -256,6 +297,9 @@ histJetCPionS *= 1/NS
 
 histJetPhotL *= 1/NL
 histJetPhotS *= 1/NS
+
+histJetProtL *= 1/NL
+histJetProtS *= 1/NS
 
 
 file.Write()
