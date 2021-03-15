@@ -172,7 +172,7 @@ for entry in range(0, numberOfEntries):
      p2 = ROOT.TLorentzVector()
      p2.SetPtEtaPhiM(branchParticle.At(particle2.D1).PT,branchParticle.At(particle2.D1).Eta,branchParticle.At(particle2.D1).Phi,branchParticle.At(particle2.D1).Mass)
      p1.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
-     if particle2.PT > 1:
+     if particle2.PT > 10:
       if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
        if p1.DeltaR(Jetqlv) <= 0.5:
          if q.PID == 1 or q.PID == 2:
@@ -212,7 +212,7 @@ for entry in range(0, numberOfEntries):
      p2 = ROOT.TLorentzVector()
      p2.SetPtEtaPhiM(branchParticle.At(particle2.D1).PT,branchParticle.At(particle2.D1).Eta,branchParticle.At(particle2.D1).Phi,branchParticle.At(particle2.D1).Mass)
      p1.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
-     if particle2.PT > 1:
+     if particle2.PT > 10:
       if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
        if p1.DeltaR(Jetqlv) <= 0.5:
          if q.PID == 1 or q.PID == 2:
@@ -252,7 +252,7 @@ for entry in range(0, numberOfEntries):
      p2 = ROOT.TLorentzVector()
      p2.SetPtEtaPhiM(branchParticle.At(particle2.D1).PT,branchParticle.At(particle2.D1).Eta,branchParticle.At(particle2.D1).Phi,branchParticle.At(particle2.D1).Mass)
      p1.SetPtEtaPhiM(particle2.PT,particle2.Eta,particle2.Phi,particle2.Mass)
-     if particle2.PT > 1:
+     if particle2.PT > 10:
       if p1.DeltaR(Jetqlv) < p1.DeltaR(Jetqbarlv):
        if p1.DeltaR(Jetqlv) <= 0.5:
          if q.PID == 1 or q.PID == 2:
