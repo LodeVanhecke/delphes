@@ -516,7 +516,7 @@ for entry in range(0, numberOfEntries):
 #histJetProtL *= 1/NL
 #histJetProtS *= 1/NS
 #histJetProtC *= 1/NC
-histJetProtB *= 1/NB
+#histJetProtB *= 1/NB
 
 #histJetNeutL *= 1/NL
 #histJetNeutS *= 1/NS
