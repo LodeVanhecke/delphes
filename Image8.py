@@ -5,61 +5,6 @@ import numpy as np
 import root_numpy
 import PIL.Image as Image
 
-def Cosmetic(hist,xtitle,ytitle,error,norm,logx,logy,filename):
-  c = ROOT.TCanvas()
-  ROOT.gStyle.SetOptStat(0)
-  for i in range(len(hist)):
-    hist[i].GetXaxis().SetTitle(xtitle)
-    hist[i].GetYaxis().SetTitle(ytitle)
-    hist[i].GetXaxis().SetRangeUser(-0.5,0.5)
-    hist[i].GetYaxis().SetRangeUser(-0.5,0.5)
-    hist[i].SetFillColor(2)
-    hist[i].SetLineWidth(1)
-    hist[i].SetTitle("")
-    if error == True:
-     if norm == True:
-      hist[i].DrawNormalized('e same box')
-     else:
-      hist[i].Draw('e same box')
-    else:
-     if norm == True:
-      hist[i].DrawNormalized('same box')
-     else:
-      hist[i].Draw('same box')
-    if logx == True:
-     c.SetLogx()
-    if logy == True:
-     c.SetLogy()
-  c.BuildLegend()
-  c.SaveAs(filename)
-
-def Cosmetic3(hist,xtitle,ytitle,error,norm,logx,logy,filename):
-  c = ROOT.TCanvas()
-  ROOT.gStyle.SetOptStat(0)
-  hist.GetXaxis().SetTitle(xtitle)
-  hist.GetYaxis().SetTitle(ytitle)
-  hist.GetXaxis().SetRangeUser(-0.5,0.5)
-  hist.GetYaxis().SetRangeUser(-0.5,0.5)
-  hist.SetFillColor(2)
-  hist.SetLineWidth(1)
-  hist.SetTitle("")
-  if error == True:
-   if norm == True:
-    hist.DrawNormalized('e same box')
-   else:
-    hist.Draw('e same box')
-  else:
-   if norm == True:
-    hist.DrawNormalized('same box')
-   else:
-    hist.Draw('same box')
-  if logx == True:
-   c.SetLogx()
-  if logy == True:
-   c.SetLogy()
-  c.BuildLegend()
-  c.SaveAs(filename)
-
 try:
   input = raw_input
 except:
@@ -96,15 +41,8 @@ branchParticle  = treeReader.UseBranch("Particle")
 # Read file
 file = ROOT.TFile(sys.argv[1][:-5] +'_out.root','RECREATE')
 
-
-NL = 0
-NS = 0
-NC = 0
-NB = 0
-
-Array = []
-
-histJetCKaon = []
+ArrayCKaonL = []
+ArrayCKaonS = []
 
 # Loop over all events
 for entry in range(0, 50):
@@ -176,19 +114,11 @@ for entry in range(0, 50):
  Jetqbar = branchGenJet.At(nPosqbar)
  Jetqbarlv.SetPtEtaPhiM(Jetqbar.PT,Jetqbar.Eta,Jetqbar.Phi,Jetqbar.Mass)
 
- # Code for histograms
- if q.PID == 1 or q.PID == 2:
-  NL += 1
- if q.PID == 3:
-  NS += 1
- if q.PID == 4:
-  NC += 1
- if q.PID == 5:
-  NB += 1
-
  # Book histograms
- histJetCKaonq = ROOT.TH2F("histJetCKaonq","", 50, -0.5, 0.5, 50, -0.5, 0.5)
- histJetCKaonqbar = ROOT.TH2F("histJetCKaonqbar","", 50, -0.5, 0.5, 50, -0.5, 0.5)
+ histJetCKaonLq = ROOT.TH2F("histJetCKaonLq","", 50, -0.5, 0.5, 50, -0.5, 0.5)
+ histJetCKaonLqbar = ROOT.TH2F("histJetCKaonLqbar","", 50, -0.5, 0.5, 50, -0.5, 0.5)
+ histJetCKaonSq = ROOT.TH2F("histJetCKaonSq","", 50, -0.5, 0.5, 50, -0.5, 0.5)
+ histJetCKaonSqbar = ROOT.TH2F("histJetCKaonSqbar","", 50, -0.5, 0.5, 50, -0.5, 0.5)
 
  # Fill histograms
  for i in range(0,branchParticle.GetEntries()):
@@ -202,11 +132,11 @@ for entry in range(0, 50):
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetq.PT
        DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       histJetCKaonq.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
+       histJetCKaonLq.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetq.PT
        DeltaTheta = Jetqlv.Theta()-p1.Theta()
-       histJetCKaonq.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
+       histJetCKaonSq.Fill(p1.DeltaPhi(Jetqlv),DeltaTheta,PT)
      else:
       continue
     else:
@@ -217,11 +147,11 @@ for entry in range(0, 50):
       if q.PID == 1 or q.PID == 2:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       histJetCKaonqbar.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
+       histJetCKaonLqbar.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
       if q.PID == 3:
        PT = abs(particle2.PT)/Jetqbar.PT
        DeltaTheta = Jetqbarlv.Theta()-p1.Theta()
-       histJetCKaonqbar.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
+       histJetCKaonSqbar.Fill(p1.DeltaPhi(Jetqbarlv),DeltaTheta,PT)
      else:
       continue
     else:
@@ -231,52 +161,49 @@ for entry in range(0, 50):
   else:
    continue
 
- #Convert histogram to numpy array
- ArrayCKaonqbar = root_numpy.hist2array(histJetCKaonq)
- ArrayCKaonq = root_numpy.hist2array(histJetCKaonqbar)
- ArrayCKaon += [ArrayqCKaonq] + [ArrayCKaonqbar]
+ # Convert histograms to numpy arrays
+ if q.PID == 1 or q.PID == 2:
+  ArrayCKaonLqbar = root_numpy.hist2array(histJetCKaonLq)
+  ArrayCKaonLq = root_numpy.hist2array(histJetCKaonLqbar)
+  ArrayCKaonL += [ArrayCKaonLq] + [ArrayCKaonLqbar]
+  histJetCKaonLq.Write()
+  histJetCKaonLqbar.Write()
+ if q.PID == 3:
+  ArrayCKaonSqbar = root_numpy.hist2array(histJetCKaonSq)
+  ArrayCKaonSq = root_numpy.hist2array(histJetCKaonSqbar)
+  ArrayCKaonS += [ArrayCKaonSq] + [ArrayCKaonSqbar]
+  histJetCKaonSq.Write()
+  histJetCKaonSqbar.Write()
 
- histJetCKaon += [histJetCKaonq] + [histJetCKaonqbar]
+ # Delete histograms (Runtime)
+ histJetCKaonLq.Delete()
+ histJetCKaonLqbar.Delete()
+ histJetCKaonSq.Delete()
+ histJetCKaonSqbar.Delete()
 
-# histJetCKaon.Write()
+# Convert list to numpy array
+ArrayCKaonL = np.array(ArrayCKaonL)
+ArrayCKaonS = np.array(ArrayCKaonS)
 
- histJetCKaonq.Write()
- histJetCKaonqbar.Write()
-
- try:
-  Cosmetic3(histJetCKaonq,'','',False,False,False,False,'./Images/'+'histJetCKaonq'+str(len(Array)-2)+'.png')
- except:
-  pass
- try:
-  Cosmetic3(histJetCKaonqbar,'','',False,False,False,False,'./Images/'+'histJetCKaonqbar'+str(len(Array)-1)+'.png')
- except:
-  pass
-
- histJetCKaonq.Delete()
- histJetCKaonqbar.Delete()
-
-try:
- Cosmetic(histJetCKaon,'','',False,False,False,False,'./Images/'+'histJetCKaon')
-except:
- pass
-
-Array = np.array(Array)
-
-#for i in Array[5]:
-# for j in i:
-#  print(j,end='\t')
-# print()
-
-print(Array.shape)
-
-for el in range(Array.shape[0]):
- pil_image = Image.fromarray((Array[el]*255).astype(np.uint8))
+# Save numpy arrays as PIL iamges
+for el in range(ArrayCKaonL.shape[0]):
+ pil_image = Image.fromarray((ArrayCKaonL[el]*255).astype(np.uint8))
  pil_image =  pil_image.convert('RGB')
- pil_image.save('./Images/'+str(el)+'.png','PNG')
+ pil_image.save('./Images/L/'+str(el)+'.png','PNG')
+for el in range(ArrayCKaonS.shape[0]):
+ pil_image = Image.fromarray((ArrayCKaonS[el]*255).astype(np.uint8))
+ pil_image =  pil_image.convert('RGB')
+ pil_image.save('./Images/S/'+str(el)+'.png','PNG')
 
-ArraySum = np.sum(Array,axis = 0)
-pil_image2 = Image.fromarray((ArraySum*255).astype(np.uint8))
+# Sum of all PIL Images
+ArrayCKaonLSum = np.sum(ArrayCKaonL,axis = 0)
+pil_image2 = Image.fromarray((ArrayCKaonLSum*255).astype(np.uint8))
 pil_image2 = pil_image2.convert('RGB')
-pil_image2.save('./Images/'+'histJetCKaon'+'.png','PNG')
+pil_image2.save('./Images/L/'+'histJetCKaonL'+'.png','PNG')
+ArrayCKaonSSum = np.sum(ArrayCKaonS,axis = 0)
+pil_image2 = Image.fromarray((ArrayCKaonSSum*255).astype(np.uint8))
+pil_image2 = pil_image2.convert('RGB')
+pil_image2.save('./Images/S/'+'histJetCKaonS'+'.png','PNG')
+
 
 file.Close()
